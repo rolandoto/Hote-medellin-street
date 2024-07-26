@@ -52,7 +52,7 @@ const Home =() =>{
   }
 
   const FindIdHotel=(hotel) =>{
-		return hotel.id_hotel ==7
+		return hotel.id_hotel ==2
 	}
 	
 	const hotel = hotelList.find(FindIdHotel)
@@ -224,16 +224,19 @@ const subtotal = getCartSubtotal()
 
 
     const rooms = [
-      {title: 'Room Estándar superior', price:240000 , image:"https://grupo-hoteles.com/storage/app/7/rooms/702137671-37-rooms-slider-1-estandar_superior_lleras_park_concept_medellin_poblado_medellin_economico_colombia_antioquia.webp", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Estándar',price:218000, image: "https://grupo-hoteles.com/storage/app/7/rooms/1353190353-38-rooms-slider-2-Habitacion-Estandar-Hotel-lleras-park-concept-hotel-poblado-economico-slider-principal-1.webp", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"Aire Acondicionado"] },
-      {title: 'Room Doble superior twin',price:260000, image: "https://grupo-hoteles.com/storage/app/7/rooms/585930631-39-rooms-slider-2-slider_1_doble_superior_twin_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia_med.webp", 
-        features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
-      {title: 'Room Suite junior',price:312000, image: "https://grupo-hoteles.com/storage/app/7/rooms/286234936-40-rooms-slider-1-rooms-slider-1-superior_junior_jacuzzi_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia..webp", 
-       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
-      {title: 'Room Familiar',price:720000, image: "https://grupo-hoteles.com/storage/app/7/rooms/625520311-42-rooms-slider-1-one_million_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia_zona_rosa.webp", 
-       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room Deluxe', price:350000 , image:"https://grupo-hoteles.com/storage/app/2/rooms/149724843-6-rooms-slider-1-Habitacion-Delux-Hotel-en-Medellin-Street-47-Hotel-c1-01.webp", 
+          features: ['Cama grande', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV',"jacuzzi"] },
+      {title: 'Room Clásica Ventilador',price:119000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1703605246-1-rooms-slider-1-habitacion-Clasica-hoteles-en-Medellin-02-01.webp", 
+        features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Ventilador'] },
+      {title: 'Room Estandar Aire',price:129000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1860922523-2-rooms-slider-2-habitacion-bussines-hoteles-en-Medellin-Slider-1.webp", 
+        features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+       {title: 'Room Jacuzzi',price:170000, image: "https://grupo-hoteles.com/storage/app/2/rooms/489465130-4-rooms-slider-2-Habitacion-Jacuzzi-Hotel-en-Medellin-Street-Slider-2.webp", 
+       features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room Familiar',price:210000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1587970644-3-rooms-slider-1-Habitacion-Grupal-Hotel-en-Medellin-Street-47-Hotel-01.webp", 
+       features: ['Camarote', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']},
+      {title: 'Room VIP',price:280000, image: "https://grupo-hoteles.com/storage/app/2/rooms/1579559628-5-rooms-slider-1-Habitacion-VIP-Hotel-en-Medellin-Street-47-Hotel-c1-01.webp", 
+       features: ['Cama matrimonial', 'Baño privado con ducha', 'Wi-Fi gratuito', 'Smart TV','Aire Acondicionado']
+      },
     ];
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
@@ -317,7 +320,7 @@ const subtotal = getCartSubtotal()
           {FillContent}
            <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
               <div className="relative bg-cover bg-center h-[650px]" style={{ 
-                    backgroundImage: `url(https://grupo-hoteles.com/storage/app/7/page/261391203-7-page-slider-1-suite-poblado-medellin-antioquia-colombia.png)`,}}>
+                    backgroundImage: `url(https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp)`,}}>
                 <div className="absolute inset-0 bg-black opacity-15"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">

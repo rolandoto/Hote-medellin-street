@@ -16,7 +16,7 @@ const Footer =() =>{
                 <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div className="flex">
                     <img
-                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/logo%202000x2000.png?raw=true"
+                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/47-street.png?raw=true"
                         alt="Logo de Gallery Hotel" 
                         width="100" 
                         height="100"
@@ -27,9 +27,9 @@ const Footer =() =>{
                 <div>
                     <div className="">
                         <ul className="space-y-2">
-                            <li className="flex items-center"> <IconFaWhatsapp />+57 305 289 77 66</li>
-                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@lleraspark.com	 </li>
-                            <li className="flex items-center"> <IconFaMapMarkerAlt/>  Cra. 38 #8 - 83 </li>
+                            <li className="flex items-center"> <IconFaWhatsapp />+57 310 365 16 61</li>
+                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@medellin47.com	 </li>
+                            <li className="flex items-center"> <IconFaMapMarkerAlt/> CLL 47 # 45 - 47 Medellín, Colombia </li>
                         </ul>
                     
                     </div>
@@ -49,13 +49,13 @@ const Footer =() =>{
                             <h2 class="text-center text-xl font-semibold mb-6">CONTACTO</h2>
                             <form class="space-y-4">
                                 <div class="grid grid-cols-2 gap-4">
-                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Nombre"/>
-                                    <input class="col-span-1 bg-white text-black p-3  focus:outline-none focus:ring-2 focus:ring-orange-500" type="email" placeholder="Email" />
+                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-black" type="text" placeholder="Nombre"/>
+                                    <input class="col-span-1 bg-white text-black p-3  focus:outline-none focus:ring-2 focus:ring-black" type="email" placeholder="Email" />
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-4">
-                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-orange-500" type="text" placeholder="Teléfono"/>
-                                    <button type="submit" class="bg-black text-white border border-white p-3  focus:outline-none focus:ring-2 focus:ring-orange-500 hover:bg-white hover:text-black">Enviar</button>
+                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-black" type="text" placeholder="Teléfono"/>
+                                    <button type="submit" class="bg-black text-white border border-white p-3  focus:outline-none focus:ring-2 focus:ring-black hover:bg-white hover:text-black">Enviar</button>
                                 </div>
                             </form>
                         </div>
@@ -66,7 +66,7 @@ const Footer =() =>{
                 <div className="text-center border-t-1  mx-auto max-w-7xl  text-black mt-8">
                     <div className=" flex  flex-col sm:flex-row  justify-between mt-8 mx-auto max-w-7xl items-center">
                             <div>
-                                Copyright © 2024 – All Rights Reserved Natural Hotel
+                                Copyright © 2024 – All Rights Reserved Hotel 47 street
                             </div>
                                     <div className=" ">
                                     <div className="flex space-x-4">

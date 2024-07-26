@@ -13,6 +13,7 @@ import useValidation from '../../Hooks/ValidateFormValues';
 import HeaderCheckout from '../../Component/HeaderCheckout/HeaderCheckout';
 import FormCheckout from '../../Component/FormCheckout/FormCheckout';
 import Footer from '../../Component/Footer/Footer';
+import ConfirmationMessage from '../../Component/ConfirmationMessage/ConfirmationMessage';
 
 const Checkout  =() =>{
     useFetchData();
@@ -26,12 +27,15 @@ const Checkout  =() =>{
     const {cart,getCartSubtotal} = UseCart()
     const subtotal = getCartSubtotal()
     const {PostCreateHotel} =useReservationCreate()
-    const {Country,loading}= useSelector(state => state.Reservation);
+    const {Country,loading,reservation}= useSelector(state => state.Reservation);
     const {loadingCart} = useSelector(state => state.Cart);
     const cardNumberArray = formValues.cardNumber.split(" ");
     const cardNumberString = cardNumberArray.join("");
     const now = moment().format('YYYY-MM-DD');
     const validate = useValidation();
+
+    
+    
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -57,7 +61,7 @@ const Checkout  =() =>{
         } 
     };
 
-    const [isOpen, setIsOpen] = useState(false);
+
 
     /*const togglePanel = () => {
       setIsOpen(!isOpen);
@@ -65,6 +69,11 @@ const Checkout  =() =>{
 */
 
     const FillContent =() =>{
+
+        if(Boolean(reservation)){
+            return ( <ConfirmationMessage title={"Tu reserva ha sido creada"} />)
+        }
+
         if(!subtotal > 0){
             return (  <EmpyCart title={"Carrito vacio"} />)
         }else{
@@ -80,6 +89,8 @@ const Checkout  =() =>{
                 />
         }
     }
+
+
 
 
     return (<>

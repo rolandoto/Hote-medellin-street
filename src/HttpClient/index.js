@@ -36,8 +36,8 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
           throw new Error('Response is not ok');
         }
     
-        const data = await resp.json();
-        return data;
+        const {ok} = await resp.json();
+        return ok;
       } catch (error) {
        
         throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
@@ -84,11 +84,75 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
       }
   };
 
+
+
+  const PostCreateEvents = async ({Name,DescriptionEvent1,DescriptionEvent2,Start_date,End_date,Place,id_hotel,actividades1,actividades2,Finally}) => {
+    try {
+        const resp = await fetch(`${config.serverRoute}/api/hotels/webSite/InsertEventsWebsite`, {
+          method: "POST",
+          headers: {
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify({Name,DescriptionEvent1,DescriptionEvent2,Start_date,End_date,Place,id_hotel,actividades1,actividades2,Finally})
+        });
+        if (!resp.ok) {
+          throw new Error('Response is not ok');
+        }
+        const data = await resp.json();
+        return data;
+      } catch (error) {
+       
+        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+      }
+  };
+
+  const getEvents= async ({id}) => {
+    try {
+        const resp = await fetch(`${config.serverRoute}/api/hotels/webSite/getEvents/${id}`, {
+          method: "GET",
+          headers: {
+            'Content-type': 'application/json'
+          }
+        });
+        if (!resp.ok) {
+          throw new Error('Response is not ok');
+        }
+        const {userQuery} = await resp.json();
+        return userQuery;
+      } catch (error) {
+       
+        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+      }
+  };
+
+
+  const getEventsDetail= async ({id}) => {
+    try {
+        const resp = await fetch(`${config.serverRoute}/api/hotels/webSite/getEventsDetail/${id}`, {
+          method: "GET",
+          headers: {
+            'Content-type': 'application/json'
+          }
+        });
+        if (!resp.ok) {
+          throw new Error('Response is not ok');
+        }
+        const {userQuery} = await resp.json();
+        return userQuery;
+      } catch (error) {
+       
+        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+      }
+  };
+
   export default {
     PostHotelByIdHotel,
     PostCreateReservation,
     GetCountry,
-    getListoHotel
+    getListoHotel,
+    PostCreateEvents,
+    getEvents,
+    getEventsDetail
   }
 
 

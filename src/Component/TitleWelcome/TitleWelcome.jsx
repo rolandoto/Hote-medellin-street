@@ -7,7 +7,7 @@ const TitleWelcome  =() =>{
             <div className="flex flex-col  mt-[260px] lg:mt-24  mx-auto max-w-7xl  md:flex-row items-center my-12 p-4">
                <div className="md:w-1/2 p-4">
                <img
-                    src="https://grupo-hoteles.com/storage/app/7/rooms/2060649073-38-rooms-slider-1-lleras-medellin-estandar.webp"
+                    src="https://grupo-hoteles.com/storage/app/2/rooms/1703605246-1-rooms-slider-1-habitacion-Clasica-hoteles-en-Medellin-02-01.webp"
                     alt="Room"
                     className="w-full h-auto rounded-lg shadow-lg"
                 />

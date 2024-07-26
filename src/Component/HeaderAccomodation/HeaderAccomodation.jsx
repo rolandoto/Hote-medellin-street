@@ -17,7 +17,7 @@ const HeaderAccomodation =() =>{
     },[])
 
     const FindIdHotel=(hotel) =>{
-        return hotel.id_hotel ==7
+        return hotel.id_hotel ==2
     }
     
     const hotel = hotelList.find(FindIdHotel) 
@@ -34,7 +34,7 @@ const HeaderAccomodation =() =>{
     }
     
   
-    return ( <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/7/page/261391203-7-page-slider-1-suite-poblado-medellin-antioquia-colombia.png)` }}>
+    return ( <div className="relative bg-cover bg-center h-[450px]" style={{ backgroundImage: `url(https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp)` }}>
                 <div className="absolute inset-0 bg-black opacity-15"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                 <h1 className="text-4xl md:text-6xl font-normal">{FillContent()}</h1>

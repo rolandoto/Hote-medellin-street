@@ -30,6 +30,8 @@ import { RiBankFill } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 import { PiBedThin } from "react-icons/pi";
+import { FaCheckCircle } from "react-icons/fa";
+
 
 
 export const IconsSnow =() =>{
@@ -240,8 +242,10 @@ export const IconsRiBankFill =() =>{
     return <RiBankFill   color="black" className="" fontSize={30}  />
 }
 
-
 export const IconsMdEmail =({color}) =>{
     return <MdOutlineEmail   color={color} className="mr-2" fontSize={30}  />
 }
 
+export const IconFaCheckCircle  =({color}) =>{
+    return <FaCheckCircle    color={color} className="mr-2" fontSize={70}  />
+}

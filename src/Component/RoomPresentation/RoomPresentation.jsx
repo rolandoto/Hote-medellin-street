@@ -22,7 +22,7 @@ const RoomPresentaion =() =>{
                 </div>
                 <div className="md:w-1/2 p-4">
                 <img 
-                    src="https://grupo-hoteles.com/storage/app/7/rooms/1021379063-39-rooms-slider-1-superior_twin_estandar_doble_lleras_park_concept_medellin_poblado_medellin_economica_antioquia_colombia.webp" 
+                    src="https://grupo-hoteles.com/storage/app/2/rooms/17374244-2-rooms-slider-1-habitacion-bussines-hoteles-en-Medellin-c4-01.webp" 
                     alt="Reservation" 
                     width="600" 
                     height="400" 
