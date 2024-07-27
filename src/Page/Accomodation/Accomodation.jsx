@@ -22,6 +22,7 @@ import UseCart from "../../Hooks/UseCart";
 import LoadingOverlay from "../../Component/LoadingCreateReserva/LoadingOverlay";
 import HeaderAccomodation from "../../Component/HeaderAccomodation/HeaderAccomodation";
 import Footer from "../../Component/Footer/Footer";
+import useRoomsPromotions from "../../Actions/useRoomsPromotions";
 
 const Accommodation = () => {
 
@@ -45,6 +46,8 @@ const Accommodation = () => {
     childrem ,
     getClassNameForDate} =  UseCalenderSearch()
 
+
+    
     const {getCartSubtotal} = UseCart()
     const subtotal = getCartSubtotal()
     const [checkbox,setCheckBox] =useState(false)
@@ -52,6 +55,14 @@ const Accommodation = () => {
     const formattedEndDate = moment(state[0].endDate).format('YYYY-MM-DD');
     const formattedStartDateToString = moment(state[0]?.startDate).format('DD MMM YYYY').toLowerCase();
     const formattedEndDateToString = moment(state[0]?.endDate).format('DD MMM YYYY').toLowerCase();
+    const [promotion,setPromotions] =useState(false)
+    const [visible, setVisible] = useState(false);
+      
+    const handSubmitCupon =() =>{
+      setPromotions(true)
+      setVisible(false)
+    }
+
 
     const PostHotelByIdHotel = useCallback(async () => {
         setContextMenuPosition(false);
@@ -94,6 +105,81 @@ const Accommodation = () => {
       setContextShowMenuPeople(false)
     }
 
+
+
+    
+    const {RoomsGetPromotions,loadingGetRoomsProtions,errorGetRoomsProtions}= useSelector((state) => state.RoomsPromotios)
+ 
+    const  {GetRoomsPromotions} = useRoomsPromotions()
+  
+    const FetchDate =async() =>{
+          await GetRoomsPromotions({id:2})
+    }
+
+    
+    console.log(RoomsGetPromotions)
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setVisible(true);
+      }, 5000); // 10000 ms = 10 segundos
+  
+      return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+    }, []);
+  
+
+    const isTodaySelected = () => {
+      const todayIndex = moment().format('d'); // Obtiene el nombre completo del día actual
+      return RoomsGetPromotions.some(day => day.day_number === todayIndex); // Verifica si el nombre del día actual está en activeDays
+    };
+
+    const isTodaypromotions =isTodaySelected()
+
+
+
+    
+    const FillContentPromotions =()=>{
+      if(loadingGetRoomsProtions){
+       return  (
+                <div  className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
+                <LoadingSkeleton />
+                </div> 
+       ) 
+      }if(errorGetRoomsProtions){
+        return   <p>...eror al cargar</p>
+                }
+        return <>{visible &&
+          
+          isTodaypromotions && (
+          <div className="fixed right-4  left-0 w-full m-auto h-[190px] top-44 z-40 text-white flex rounded-lg overflow-hidden shadow-lg max-w-md">
+
+              <div className="p-4  flex-1 bg-gray-700">
+                <h2 className="text-[15px] font-bold mb-2">¡OFERTA EXCLUSIVA SOLO PARA TI!</h2>
+                <p className="text-sm mb-3">
+                Reserva una de nuestras comidas habitaciónes y unten un 10% de descuento
+                </p>
+                <button  onClick={handSubmitCupon}  className="bg-white w-[200px] md:w-[200px]  text-gray-800 px-4 py-1 rounded text-sm font-semibold hover:bg-gray-200 transition-colors">
+                  APLICAR DESCUENTO
+                </button>
+              </div>
+              <div className="w-1/2 relative">
+                <img 
+                  src="https://grupo-hoteles.com/storage/app/6/rooms/206865655-14-rooms-slider-3-hotel-cartagena-dc-economico-habitacion-clasica-seleccion.webp" 
+                  alt="Luxury Suite" 
+                  className="object-cover h-[190px] w-full"
+                />
+                <button onClick={() => setVisible(false)} className="absolute  w-6 h-6  top-1 right-1 text-white bg-gray-800 rounded-full flex items-center justify-center">
+                  ×
+                </button>
+
+            </div>
+          </div>
+      )}</>
+    }
+  
+    useEffect(() =>{
+      FetchDate ()
+    },[])
   
     const FillContent =()=>{
       if(loading){
@@ -105,7 +191,7 @@ const Accommodation = () => {
       }if(error){
         return    <EmpyCart title={"No tenemos habitaciones disponibles para esta ocupación"} />
                 }
-        return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation  key={index} {...List}/>)}</>
+        return <>  {hotel?.availableRooms?.map((List,index) => <CardAccomodation promotion={promotion}  key={index} {...List}/>)}</>
     }
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1;
 
@@ -271,6 +357,10 @@ const Accommodation = () => {
                 </div>              
                 </SectionSearch>
                 <div >
+                <div className="p-2">
+                    {FillContentPromotions()}
+                  </div>
+                 
                     {FillContent()}
                     <Footer />
                 </div>
