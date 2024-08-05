@@ -2,6 +2,7 @@ import React, { useEffect }  from "react";
 import Events from "../../Component/Events/Events";
 import Header from "../../Component/Header/Header";
 import Footer from "../../Component/Footer/Footer";
+import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
 
 const EventsNext =()  =>{
     useEffect(() => {
@@ -19,6 +20,7 @@ const EventsNext =()  =>{
                         </h1>
                     </div>
                 </div>
+            <WhatsappButton/>
             <Events />
             <Footer/>
         </>)

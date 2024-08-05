@@ -4,6 +4,7 @@ import Header from "../../Component/Header/Header";
 import Footer from "../../Component/Footer/Footer";
 import { useSelector } from "react-redux";
 import UseEventsActions from "../../Actions/useEventsActions";
+import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
 
 const DetailEvents =() =>{
 
@@ -75,6 +76,7 @@ const DetailEvents =() =>{
                         </h1>
                     </div>
                 </div>
+                <WhatsappButton />
                 {FillContent()}
               <Footer/>
             </>)

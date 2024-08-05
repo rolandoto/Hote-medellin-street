@@ -23,6 +23,7 @@ import UseCart from "../../Hooks/UseCart";
 import Cart from "../../Component/Cart/Cart";
 import UseHotelActions from "../../Actions/useHotelsActions";
 import { useSelector } from "react-redux";
+import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
 
 const Home =() =>{
   const navigate = useNavigate();
@@ -464,7 +465,7 @@ const subtotal = getCartSubtotal()
 
           {subtotal >0 &&<Cart    
                           /> } 
-
+          <WhatsappButton />
           <AccordionAsk faqs={faqs} />
           <Footer />
     

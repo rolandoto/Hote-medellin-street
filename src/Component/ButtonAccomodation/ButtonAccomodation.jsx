@@ -1,9 +1,20 @@
 import { ContaineButton } from "../../Ui/Style/GeneralStyle"
+import { IconFaUser } from "../Icons/Icons"
 
-const ButtonAccomodation =({price,nights,person,handleAddToCart,validPromotions,promotion})=>{
+const ButtonAccomodation =({price,nights,person,handleAddToCart,validPromotions,promotion,totalCountAdults,max_people})=>{
         return (
             <ContaineButton >
                 <div className="p-2 " >
+                <div className="flex">
+                    {[...Array(totalCountAdults)].map((_, i) => (
+                        <IconFaUser key={i} color="black" />
+                        ))}
+                        {totalCountAdults < max_people && (
+                        [...Array(max_people - totalCountAdults)].map((_, i) => (
+                            <IconFaUser key={i + totalCountAdults} color="#b3b3b3" />
+                        ))
+                        )}
+                    </div>
                     <h2 className="text-[18px] font-normal ">Noches: {nights}</h2>
                     <h2 className="text-[18px]  font-normal ">Adultos: {person}  </h2>
                     {promotion  ?   <>

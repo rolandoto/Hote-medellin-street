@@ -58,7 +58,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                             <div className="p-6 border border-gray-300 rounded-lg">
                                 <h2 className="text-xl font-bold mb-4">Resumen de tu reserva</h2>
                                     <div className="mb-4">
-                                        <h3 className="text-lg font-semibold">Hotel {FillContent()}</h3>
+                                        <h3 className="text-lg font-semibold">{FillContent()}</h3>
                                         <p className="text-gray-600">CLL 47 # 45 - 47 Medellín, Colombia</p>
                                     </div>
                                     {cart.map((itemCardRoom,e) =>(
