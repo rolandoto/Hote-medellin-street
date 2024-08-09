@@ -49,6 +49,7 @@ const Checkout  =() =>{
                                   email:formValues.email,
                                   city:formValues.city,
                                   country:formValues.country,
+                                  phone:formValues.phone,
                                   fecha:now,
                                   number:cardNumberString,
                                   exp_month:formValues.expiryMonth,

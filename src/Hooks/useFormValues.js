@@ -7,9 +7,9 @@ const useFormValues = () => {
     apellido: '',
     email: '',
     phone: '',
-    address: '',
-    city: '',
-    country: '',
+    address: '1212213',
+    city: 'medellin',
+    country: '471',
     specialReq: '',
     cardNumber: '',
     cardName: '',
@@ -19,6 +19,8 @@ const useFormValues = () => {
     termsAccepted: false,
     siteTermsAccepted: false,
   });
+
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'cardNumber') {

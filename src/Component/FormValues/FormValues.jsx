@@ -53,58 +53,7 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                             />
                             {formErrors.phone && <p className="text-red-500 text-xs">{formErrors.phone}</p>}
                         </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Dirección</label>
-                            <input
-                                name="address"
-                                type="text"
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                                placeholder="Dirección"
-                                value={formValues.address}
-                                onChange={handleChange}
-                            />
-                            {formErrors.address && <p className="text-red-500 text-xs">{formErrors.address}</p>}
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Ciudad</label>
-                            <input
-                                name="city"
-                                type="text"
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                                placeholder="Ciudad"
-                                value={formValues.city}
-                                onChange={handleChange}
-                            />
-                            {formErrors.city && <p className="text-red-500 text-xs">{formErrors.city}</p>}
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">País</label>
-                            <select
-                                name="country"
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                                value={formValues.country}
-                                onChange={handleChange}
-                        >
-                            <option value={""} >País</option>
-                            {Country.map((itemCountry) => (
-                                <option key={itemCountry.ID} value={itemCountry.ID}>
-                                    {itemCountry.nombre}
-                                </option>
-                            ))}
-                            </select>
-                            {formErrors.country && <p className="text-red-500 text-xs">{formErrors.country}</p>}
-                        </div>
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700">Requerimientos especiales</label>
-                            <input
-                                name="specialReq"
-                                type="text"
-                                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-                                placeholder="Requerimientos especiales"
-                                value={formValues.specialReq}
-                                onChange={handleChange}
-                            />
-                        </div>
+                        
                     </div>
                 <div>
                     </div>
