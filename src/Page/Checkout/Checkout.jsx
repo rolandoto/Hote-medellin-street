@@ -15,6 +15,7 @@ import FormCheckout from '../../Component/FormCheckout/FormCheckout';
 import Footer from '../../Component/Footer/Footer';
 import ConfirmationMessage from '../../Component/ConfirmationMessage/ConfirmationMessage';
 import WhatsappButton from '../../Component/WhatsappButton/WhatsappButton';
+import { Environment } from '../../Config/Config';
 
 const Checkout  =() =>{
     useFetchData();
@@ -32,38 +33,65 @@ const Checkout  =() =>{
     const {loadingCart} = useSelector(state => state.Cart);
     const cardNumberArray = formValues.cardNumber.split(" ");
     const cardNumberString = cardNumberArray.join("");
-    const now = moment().format('YYYY-MM-DD');
+    const now = moment().format('YYYY-MM-DD HH:mm:ss');
+
     const validate = useValidation();
 
+    const Rooms = cart.map(item => ({
+        "roomTypeID": item.roomTypeID,
+        "quantity": item.quantity
+    }));
+
+
+    const adults = cart.map(item => ({
+        "roomTypeID": item.roomTypeID,
+        "quantity": item.person
+    }));
     
+    const childreen = cart.map(item => ({
+        "roomTypeID": item.roomTypeID,
+        "quantity": 0
+    }));
+
+
     
+    const night = cart.map(item => ({
+        startDate: item?.startDate,
+        endDate: item?.endDate,
+        price: item?.Price
+    }));
+
+   
+    const subtotalPayment =  night[0]?.price
+    const StartDate = night[0]?.startDate
+    const EndDate = night[0]?.endDate
 
     const handleSubmit = async(e) => {
         e.preventDefault();
         const errors = validate(formValues);
         setFormErrors(errors);
         if (Object.keys(errors).length === 0) {
-        await PostCreateHotel({ cart,
-                                  name:formValues.name,
-                                  apellido:formValues.apellido,
-                                  email:formValues.email,
-                                  city:formValues.city,
-                                  country:formValues.country,
-                                  phone:formValues.phone,
-                                  fecha:now,
-                                  number:cardNumberString,
-                                  exp_month:formValues.expiryMonth,
-                                  exp_year:formValues.expiryYear,
-                                  cvc:formValues.cvc,
-                                  card_holder:formValues.cardName,
-                                  subtotal
-                                  })
-        
-       
-        } 
+        await PostCreateHotel({ propertyID:Environment.propertyID,
+                                token:Environment.Token,
+                                startDate:StartDate,
+                                endDate:EndDate,
+                                guestFirstName:formValues.name,
+                                guestLastName:formValues.apellido,
+                                guestEmail:formValues.email,
+                                guestPhone:formValues.phone,
+                                rooms:Rooms,
+                                adults:adults,
+                                children:childreen,
+                                dateCreated:now,
+                                number:cardNumberString,
+                                exp_month:formValues.expiryMonth,
+                                exp_year:formValues.expiryYear,
+                                cvc:formValues.cvc,
+                                card_holder:formValues.cardName,
+                                subtotal:subtotalPayment
+                            })} 
+    
     };
-
-
 
     /*const togglePanel = () => {
       setIsOpen(!isOpen);

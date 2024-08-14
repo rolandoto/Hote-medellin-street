@@ -7,54 +7,59 @@ import useCartActions from "../../Actions/useCartActions";
 import { useSelector } from "react-redux";
 import {toast} from "sonner"
 
-const CardAccomodation =({ID,room_image,title,description,Price,cantidad,nights,person,Room,end,start,Price_nigth,promotion,totalCountAdults,max_people}) =>{
+const CardAccomodation =({  roomTypeName,
+    maxGuests,
+    roomRate,
+    roomTypePhotos,
+    cantidad,
+    promotion
+    ,counPeople,
+    endDate,
+    startDate,
+    roomsAvailable,
+    roomTypeID,
+    nightsToday}) =>{
 
-    const {AddCart } =useCartActions()
-    
-    const {cart} = useSelector(state => state.Cart);
-    const originalPrice = Price; // Precio original
-    const discountRate = 0.19; // 19% de descuento
-    const discountedPrice = originalPrice * (1 - discountRate);
-   
-    const validPromotions =promotion ? discountedPrice :  Price
 
-   
-    const handleAddToCart = () => {
-        let roomByID = 0
-        Object.values(Room)
-          .forEach((itemRoom) => {
-            if(cart.every((item) =>item.roomByID != itemRoom)){
-                roomByID = itemRoom
-            }else{
-                roomByID=roomByID
-            }
-          })
-        if(roomByID !=0){
-            AddCart({ID,room_image,title,Price,cantidad,nights,person,roomByID,end,start,quantity:1,Price_nigth})
-        }else{
-            toast.error("no habitacion disponible")
-        }
-    };
+const {cart} = useSelector(state => state.Cart);
 
-    return (   
-            <MainAccomodationRoom className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8"   >     
-            <MainProduct className="lg:flex block bg-white shadow-md"    >
-                        <Fragment>
-                            <TitleDinner />
-                            <ImginProduct   className="w-auto" src={room_image}  alt="Hotel Image"/>
-                        </Fragment>
-                        <DescripctionAccomodation cantidad={cantidad}  description={description} title={title}  />
-                        <ButtonAccomodation 
-                                max_people={max_people}
-                                totalCountAdults={totalCountAdults}
-                                validPromotions={validPromotions}
-                                promotion={promotion}
-                                handleAddToCart={handleAddToCart}
-                                price={Price} 
-                                nights={nights}
-                                person={person}  />
-                    </MainProduct> 
-            </MainAccomodationRoom>)
+const originalPrice = roomRate; // Precio original
+const discountRate = 0.19; // 19% de descuento
+const discountedPrice = originalPrice * (1 - discountRate);
+
+const validPromotions =promotion ? discountedPrice :  roomRate
+
+const {AddCart } =useCartActions()
+
+const handleAddToCart = () => {
+if(cart.every((item) =>item.quantity+1 <= roomsAvailable)){
+AddCart({ roomTypeID, roomTypeName,quantity: 1,Price:roomRate,roomsAvailable,startDate,endDate,room_image:roomTypePhotos[0].image,nights:nightsToday,person:counPeople,persontotal:counPeople}); 
+}else{
+toast.error("no habitacion disponible")
+}
+};
+
+return (   
+<MainAccomodationRoom className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8"   >     
+<MainProduct className="lg:flex block bg-white shadow-md"    >
+<Fragment>
+    <TitleDinner />
+ 
+    <ImginProduct   className="w-auto" src={roomTypePhotos[0].image}  alt="Hotel Image"/>
+
+</Fragment>
+<DescripctionAccomodation max_people={maxGuests} promotion={promotion} cantidad={cantidad}   title={roomTypeName}  />
+<ButtonAccomodation 
+        validPromotions={validPromotions}
+        max_people={maxGuests}
+        totalCountAdults={counPeople}
+        promotion={promotion}
+        handleAddToCart={handleAddToCart}
+        price={roomRate} 
+        nights={nightsToday}
+        person={counPeople}  />
+</MainProduct> 
+</MainAccomodationRoom>)
 }
 
 export default CardAccomodation

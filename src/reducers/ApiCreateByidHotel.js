@@ -20,7 +20,7 @@ export const ApiCreateByidHotel = createSlice({
             state.error= null
         },
         setCreateReservation:(state,action) =>{
-            state.reservation = action.payload
+            state.reservation =true
             state.loading= false
         },
         setError:(state) =>{

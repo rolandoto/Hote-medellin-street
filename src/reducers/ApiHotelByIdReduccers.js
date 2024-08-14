@@ -11,7 +11,7 @@ export const initialState ={
 }
 
 export const ApiHotelByIdReduccers = createSlice({
-    name:"Tarifas",
+    name:"Hotel",
     initialState,
     reducers:{
         loading:(state) =>{

@@ -6,18 +6,18 @@ const UseHotelActions =() =>{
 
     const dispatch =  useAppDispatch()
 
-    const getHotel =async({id,desde,hasta,counPeople}) =>{
+    const getHotel =async({propertyID,startDate,endDate,token,counPeople}) =>{
         dispatch(loading())
         try {
-            const response  = await   HttpClient.PostHotelByIdHotel({id,desde,hasta,counPeople})
+            const response  = await  HttpClient.getAvailableRoomTypes({propertyID,startDate,endDate,token,counPeople})
             if(response){
                 dispatch(setHotel(response)) 
             }else{
                 dispatch(setError("no found")) 
             }
         } catch (error) {
+
             dispatch(setError("no found")) 
-         
         }
     }
 
@@ -25,7 +25,6 @@ const UseHotelActions =() =>{
         dispatch(loadingHotel())
         try {
             const response  = await   HttpClient.getListoHotel()
-
             if(response){
                 dispatch(setListHotel(response)) 
             }else{

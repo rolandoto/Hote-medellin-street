@@ -9,10 +9,44 @@ const useReservationCreate =() =>{
 
     const dispatch =  useAppDispatch()
 
-    const PostCreateHotel =async({cart,name,apellido,email,city,country,fecha,number,exp_month,exp_year,cvc,card_holder,subtotal,phone}) =>{
+    const PostCreateHotel =async({  propertyID,
+                                    token,
+                                    startDate,
+                                    endDate,
+                                    guestFirstName,
+                                    guestLastName,
+                                    guestEmail,
+                                    guestPhone,
+                                    rooms,
+                                    adults,
+                                    children,
+                                    dateCreated,
+                                    number,
+                                    exp_month,
+                                    exp_year,
+                                    cvc,
+                                    card_holder,
+                                    subtotal}) =>{
         dispatch(loading())
         try {
-            const response  = await HttpClient.PostCreateReservation({cart,name,apellido,email,city,country,fecha,number,exp_month,exp_year,cvc,card_holder,subtotal,phone})
+            const response  = await HttpClient.PostpostReservation({propertyID,
+                                                                    token,
+                                                                    startDate,
+                                                                    endDate,
+                                                                    guestFirstName,
+                                                                    guestLastName,
+                                                                    guestEmail,
+                                                                    guestPhone,
+                                                                    rooms,
+                                                                    adults,
+                                                                    children,
+                                                                    dateCreated,
+                                                                    number,
+                                                                    exp_month,
+                                                                    exp_year,
+                                                                    cvc,
+                                                                    card_holder,
+                                                                    subtotal})
             if(response){
                 dispatch(setCreateReservation(response)) 
                 RemoveCartAll()
