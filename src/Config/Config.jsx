@@ -13,7 +13,6 @@ export const CLoubedsRoute ={
    //serverRoute:"http://localhost:3001"
 }
 
-
 export const Environment ={
   propertyID:"315187",
   Token:"cbat_twTQmem5homQy9W0TVZByN0rh3pmvK4N"
