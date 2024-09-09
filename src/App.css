@@ -63,3 +63,16 @@
     transform: scale(1);
   }
 }
+
+
+
+.letra{
+  font-size: 14px;
+    /* font-weight: 400; */
+    overflow: hidden;
+    /* text-align: center; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+    height: 200px;
+}
