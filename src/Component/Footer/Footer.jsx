@@ -38,7 +38,6 @@ const Footer =() =>{
                             <div className="flex justify-center space-x-4 mt-4">
                                 <IconFaInstagram   onclick={handleInstagram} />
                                 <IconFaFacebookF  onclick={handleFacebook} />
-                                <IconFaYoutube />
                             </div>
                     </div>
                 </div>

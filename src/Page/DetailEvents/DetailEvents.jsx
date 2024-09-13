@@ -5,6 +5,7 @@ import Footer from "../../Component/Footer/Footer";
 import { useSelector } from "react-redux";
 import UseEventsActions from "../../Actions/useEventsActions";
 import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
+import Usetitle from "../../Hooks/Usetitle";
 
 const DetailEvents =() =>{
 
@@ -25,7 +26,10 @@ const DetailEvents =() =>{
       useEffect(() =>{
           fetchDate()
       },[])
- 
+      
+    Usetitle({title:geteventsDetail.Name})
+
+
    const FillContent =() =>{
     if(loadinggetEventsDetail){
         return <p>...cargando</p>
