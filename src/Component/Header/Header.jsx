@@ -32,7 +32,7 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     <div className="hidden lg:block " >
                         <a 
                          target="_blank"
-                         href="https://www.google.com/maps/place/Mystic+loft+37/@6.208239,-75.56752,15z/data=!4m9!3m8!1s0x8e4429eddf1b0131:0x3bfecc3b68c5468d!5m2!4m1!1i2!8m2!3d6.2082389!4d-75.5675204!16s%2Fg%2F11jyjhqc95?hl=es-419&entry=ttu"
+                         href="https://www.google.com/maps/dir//Cl.+47+%2345-47,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2457143,-75.6486966,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e442856f7c6f815:0xc0a594c5b655361!2m2!1d-75.5662947!2d6.2457207?entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D"
                         className="text-white bg-black w-[150px] p-4 rounded hover:bg-black">Cómo llegar</a>
                     </div>
 
@@ -73,13 +73,12 @@ const Header =({scrollToRoomSectionEvent}) =>{
                                 Reservas
                             </Link>
                             <a  target="_blank"
-                                href="https://www.google.com/maps/place/Mystic+loft+37/@6.208239,-75.56752,15z/data=!4m9!3m8!1s0x8e4429eddf1b0131:0x3bfecc3b68c5468d!5m2!4m1!1i2!8m2!3d6.2082389!4d-75.5675204!16s%2Fg%2F11jyjhqc95?hl=es-419&entry=ttu"
+                                href="https://www.google.com/maps/dir//Cl.+47+%2345-47,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia/@6.2457143,-75.6486966,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8e442856f7c6f815:0xc0a594c5b655361!2m2!1d-75.5662947!2d6.2457207?entry=ttu&g_ep=EgoyMDI0MDkxOC4xIKXMDSoASAFQAw%3D%3D"
                                 className="text-white bg-black w-full p-4 rounded hover:bg-black"   
                             >
                                 Cómo llegar
                             </a>
-                        </div>
-                }
+                        </div>}
         </nav>  
     )
 

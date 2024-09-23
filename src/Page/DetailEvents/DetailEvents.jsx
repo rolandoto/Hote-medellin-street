@@ -55,7 +55,6 @@ const DetailEvents =() =>{
                 </div>
         </div>
     </>
-   
     }
     return (<>
                <Header/>
