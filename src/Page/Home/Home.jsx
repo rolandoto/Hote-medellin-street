@@ -357,6 +357,16 @@ const [currentIndex, setCurrentIndex] = useState(0);
     }
   };
 
+
+  const testimonials = [
+    {
+      name: "",
+      image: '', // Replace with actual image URL
+      feedback: '',
+    }
+  ];
+  
+
   const features = [
     {
       title: "Desayuno incluido",
@@ -391,30 +401,51 @@ const [currentIndex, setCurrentIndex] = useState(0);
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Main Content */}
-      <div className="relative  m-auto max-w-7xl z-10  flex flex-col items-start justify-center h-full text-white px-4 text-center">
-        <p className="text-sm text-right  font-bold uppercase mb-2">El hotel ideal para viajes de negocios en Medellín</p>
-        <h1 className="text-[90px]  mb-8">Hotel 47 Street Medellín</h1>
-      </div>
+      <div className="relative m-auto max-w-7xl z-10 flex flex-col items-start justify-start  md:justify-center  h-full text-white px-4 text-center">
+  <p className="text-sm text-left  md:text-base lg:text-lg  font-bold uppercase mb-2">
+    El hotel ideal para viajes de negocios en Medellín
+  </p>
+  <h1 className="text-[50px] sm:text-[70px] md:text-[80px] text-left lg:text-[90px] mb-8">
+    Hotel 47 Street Medellín
+  </h1>
+</div>
 
       {/* Bottom Navigation */}
-          <div className="absolute max-w-7xl m-auto bottom-0 left-0  cursor-pointer right-0 flex">
-            <div className="flex-1 flex flex-col items-center justify-center p-10 z-50  hover:bg-[#002f6c] bg-gray-800 text-white">
-              <i className="fa fa-tag text-xl mb-4"><BsTagFill fontSize={40}   /></i>
-              <p className="text-center text-[18px] font-medium			">Programa Viajero Frecuente</p>
-            </div>
-            <div className="flex-1 flex flex-col items-center  cursor-pointer  justify-center p-10  z-50  hover:bg-[#002f6c] bg-gray-800 text-white">
-              <i className="fa fa-briefcase text-xl mb-4"><FaUserTie fontSize={40}   />  </i>
-              <p className="text-center text-[18px]  font-medium			">Centro de Negocios</p>
-            </div>
-            <div className="flex-1 flex flex-col items-center cursor-pointer  justify-center  z-50 p-10  bg-gray-800 hover:bg-[#002f6c] text-white">
-              <i className="fa fa-parking text-xl mb-4"><FaParking fontSize={40}  /> </i>
-              <p className="text-center text-[18px] font-medium			">Parqueadero</p>
-            </div>
-            <div onClick={PostHotelByIdHotel}  className="flex-1  z-50 flex flex-col items-center cursor-pointer  justify-center p-10  bg-[#002f6c] text-white">
-              <i className="fa fa-concierge-bell text-xl mb-4"> <PiCallBellFill fontSize={40} /> </i>
-              <p className="text-center text-[18px] font-medium			">Reservar</p>
-            </div>
-          </div>
+      <div className="absolute md:p-0  pr-10  pl-10   max-w-7xl mx-auto bottom-0 left-0 right-0 flex flex-col md:flex-row">
+      <div className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
+        <i className="text-4xl mb-4">
+          <BsTagFill fontSize={40} />
+        </i>
+        <p className="text-center text-base md:text-lg font-medium">
+          Programa Viajero Frecuente
+        </p>
+      </div>
+      <div className="flex-1 flex flex-col items-center justify-center p-5 md:p-5 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
+        <i className="text-4xl ">
+          <FaUserTie fontSize={40} />
+        </i>
+        <p className="text-center text-base md:text-lg font-medium">
+          Centro de Negocios
+        </p>
+      </div>
+      <div className="flex-1 flex flex-col items-center justify-center p-5 md:p-5 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
+        <i className="text-4xl ">
+          <FaParking fontSize={40} />
+        </i>
+        <p className="text-center text-base md:text-lg font-medium">
+          Parqueadero
+        </p>
+      </div>
+      <div
+        onClick={PostHotelByIdHotel}
+        className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 cursor-pointer z-50 bg-[#002f6c] text-white"
+      >
+        <i className="text-4xl mb-4">
+          <PiCallBellFill fontSize={40} />
+        </i>
+        <p className="text-center text-base md:text-lg font-medium">Reservar</p>
+      </div>
+    </div>
     </div>
              
 
@@ -552,20 +583,20 @@ const [currentIndex, setCurrentIndex] = useState(0);
                     </div>
                  
                     {/* Stats Section */}
-                    <div className=" max-w-7xl mt-9  m-auto bottom-4 left-0  cursor-pointer right-0 flex">
-                      <div className="flex-1 flex flex-col items-center justify-center p-10 z-50  hover:text-white  hover:bg-[#002f6c]  text-[#002f6c]">
-                        <p className="text-6xl">24</p>
-                        <p className="text-sm">HABITACIONES CLÁSICAS</p>
-                      </div>
-                      <div className="flex-1 flex flex-col items-center justify-center p-10 z-50  hover:text-white  hover:bg-[#002f6c]  text-[#002f6c]">
-                        <p className="text-6xl">18</p>
-                        <p className="text-sm">HABITACIONES SUPERIOR</p>
-                      </div>
-                      <div className="flex-1 flex flex-col  items-center justify-center p-10 z-50 hover:text-white   hover:bg-[#002f6c]  text-[#002f6c]">
-                        <p className="text-6xl">16</p>
-                        <p className="text-sm">HABITACIONES JACUZZI</p>
-                      </div>
-                    </div>
+                    <div className="max-w-7xl mt-9 mx-auto flex flex-wrap md:flex-nowrap bottom-4 left-0 right-0 cursor-pointer">
+      <div className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 z-50 hover:text-white hover:bg-[#002f6c] text-[#002f6c]">
+        <p className="text-4xl md:text-6xl">24</p>
+        <p className="text-xs md:text-sm">HABITACIONES CLÁSICAS</p>
+      </div>
+      <div className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 z-50 hover:text-white hover:bg-[#002f6c] text-[#002f6c]">
+        <p className="text-4xl md:text-6xl">18</p>
+        <p className="text-xs md:text-sm">HABITACIONES SUPERIOR</p>
+      </div>
+      <div className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 z-50 hover:text-white hover:bg-[#002f6c] text-[#002f6c]">
+        <p className="text-4xl md:text-6xl">16</p>
+        <p className="text-xs md:text-sm">HABITACIONES JACUZZI</p>
+      </div>
+    </div>
                     
                   </div>
                 </div>
@@ -645,7 +676,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
           <button 
               onClick={() => setIsExpanded(!isExpanded)}
               className="w-full flex items-center justify-between rounded-lg  transition-colors">
-              <span className="text-lg font-medium text-gray-900">
+              <span className="text-[20px] font-bold text-gray-900">
               Club de negocios 47 Street
               </span>
               {isExpanded && <>
@@ -694,7 +725,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
               className="w-full flex items-center justify-between p-4 rounded-lg  transition-colors">
-              <span className="text-lg font-medium text-gray-900">
+              <span className="text-[20px] font-bold text-gray-900">
                 Espacios flexibles para sus negocios
               </span>
               {!isExpanded && <>
@@ -736,6 +767,31 @@ const [currentIndex, setCurrentIndex] = useState(0);
         </div>
       </div>
     </div>
+
+
+    <div className="bg-gray-100 py-12 mt-28 ">
+          <div className=" max-w-7xl m-auto">
+            <h2 className="text-3xl font-lora text-center mb-8">
+              Lo que dicen nuestros clientes
+            </h2>
+            <div className="flex flex-col md:flex-row justify-between items-center  ">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-lg lg:mt-0 m-5 text-center w-full max-w-xs"
+                >
+                  <img
+                    className=" rounded-full mx-auto mb-4"
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                  />
+                  <p className="text-gray-600 mb-4">{testimonial.feedback}</p>
+                  <p className="font-semibold text-gray-800">{testimonial.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
          
           <div ref={roomEventsSectionRef} >
             <Events  />
