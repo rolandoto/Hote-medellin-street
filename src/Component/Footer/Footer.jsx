@@ -11,75 +11,74 @@ const Footer =() =>{
         window.open("https://www.instagram.com/galleryhotelmed/", "_blank");
     };
 
-    return (
-            <footer className="bg-gray-200   text-black py-8">
-                <div className="mx-auto max-w-7xl p-4  flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div className="flex">
-                    <img
-                        src="https://github.com/rolandoto/image-pms/blob/main/Logos/47-street.png?raw=true"
-                        alt="Logo de Gallery Hotel" 
-                        width="100" 
-                        height="100"
-                        className="w-48 mb-4"
-                    />
-                </div>
-
-                <div>
-                    <div className="">
-                        <ul className="space-y-2">
-                            <li className="flex items-center"> <IconFaWhatsapp />+57 310 365 16 61</li>
-                            <li className="flex items-center mr-6">  <IconsMdEmail />reservas@medellin47.com	 </li>
-                            <li className="flex items-center"> <IconFaMapMarkerAlt/> CLL 47 # 45 - 47 Medellín, Colombia </li>
-                        </ul>
-                    
-                    </div>
-                    
-                    <div className="w-[350px] lg:w-[280px] lg:w-122 " >
+    /**
+     * 
+     * <div className="w-[350px] lg:w-[280px] lg:w-122 " >
                             <div className="flex justify-center space-x-4 mt-4">
                                 <IconFaInstagram   onclick={handleInstagram} />
                                 <IconFaFacebookF  onclick={handleFacebook} />
                             </div>
                     </div>
-                </div>
-               
-                <div className=" ">
-                    <div class="bg-gray-200 text-black flex items-center justify-center ">
-                        <div class="w-full max-w-md mt-6">
-                            <h2 class="text-center text-xl font-semibold mb-6">CONTACTO</h2>
-                            <form class="space-y-4">
-                                <div class="grid grid-cols-2 gap-4">
-                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-black" type="text" placeholder="Nombre"/>
-                                    <input class="col-span-1 bg-white text-black p-3  focus:outline-none focus:ring-2 focus:ring-black" type="email" placeholder="Email" />
-                                </div>
+     * 
+     */
 
-                                <div class="grid grid-cols-2 gap-4">
-                                    <input class="col-span-1 bg-white text-black p-3 focus:outline-none focus:ring-2 focus:ring-black" type="text" placeholder="Teléfono"/>
-                                    <button type="submit" class="bg-black text-white border border-white p-3  focus:outline-none focus:ring-2 focus:ring-black hover:bg-white hover:text-black">Enviar</button>
-                                </div>
-                            </form>
-                        </div>
+    return (
+        <div className="relative bg-cover bg-center h-[400px] flex items-center justify-center text-white" style={{ backgroundImage: "url('https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp')" }}>
+        <div className="bg-black bg-opacity-50 w-full h-full absolute top-0 left-0"></div>
+        
+        <div className="relative z-10 flex flex-col md:flex-row md:justify-between items-center w-full px-10 md:px-20">
+          <div className="md:w-[300px]">
+            <h1 className="text-4xl font-bold">Hotel 47 Street</h1>
+            <p className="text-[14px] mt-4">
+              Reserve ahora y disfrute de las mejores tarifas en nuestro hotel. Ofrecemos tarifas especiales para estancias prolongadas y grupos.
+            </p>
+            <div className="flex space-x-4 mt-4">
+              <a href="#" aria-label="Facebook" className="text-white text-2xl">
+              <div className="w-[350px] lg:w-[280px] lg:w-122 " >
+                            <div className="flex justify-center space-x-4 mt-4">
+                                <IconFaInstagram   onclick={handleInstagram} />
+                                <IconFaFacebookF  onclick={handleFacebook} />
+                            </div>
                     </div>
-                </div>
-                
-                </div>
-                <div className="text-center border-t-1  mx-auto max-w-7xl  text-black mt-8">
-                    <div className=" flex  flex-col sm:flex-row  justify-between mt-8 mx-auto max-w-7xl items-center">
-                            <div>
-                                Copyright © 2024 – All Rights Reserved Hotel 47 street
-                            </div>
-                                    <div className=" ">
-                                    <div className="flex space-x-4">
-                                    <img 
-                                        src="https://github.com/rolandoto/image-pms/blob/main/payment.png?raw=true" 
-                                        alt="Métodos de pago" 
-                                        width="200" 
-                                        height="100" 
-                                    />
-                                    </div>
-                            </div>
-                        </div>
-                </div>
-            </footer>
+              </a>
+              <a href="#" aria-label="Instagram" className="text-white text-2xl">
+                {/* Insert Instagram Icon */}
+              </a>
+            </div>
+          </div>
+  
+          <div className="mt-10 md:mt-0 md:w-1/2">
+            <h2 className="text-lg font-semibold">CONTACTO</h2>
+            <div className="flex items-center mt-4">
+              <span>📞</span>
+              <p className="ml-2">+57 310 365 16 61</p>
+            </div>
+            <div className="flex items-center mt-2">
+              <span>✉️</span>
+              <p className="ml-2">reservas@medellin47.com</p>
+            </div>
+            <div className="flex items-center mt-2">
+              <span>📍</span>
+              <p className="ml-2">CLL 47 # 45 - 47 Medellín, Colombia</p>
+            </div>
+          </div>
+  
+          <div className="absolute bottom-0 item-center right-5 w-40 h-[100px] md:w-60 md:h-60">
+          <div className="map-container" style={{ width: "100%", height: "400px" }}>
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15906.971964172734!2d-75.6486966!3d6.2457143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442856f7c6f815%3A0xc0a594c5b655361!2sCl.%2047%20%2345-47%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1698617462304!5m2!1ses!2sco"
+                width="100%"
+                height="50%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+          </div>
+          </div>
+        </div>
+      </div>
     )
 }
 export default Footer

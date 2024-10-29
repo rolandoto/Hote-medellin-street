@@ -159,3 +159,7 @@
   .rdrEndEdge{
     background-color: black;
   }
+
+  .text-s{
+    font-family: 'Inter', Helvetica, Arial, Lucida, sans-serif;
+  }
