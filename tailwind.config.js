@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        '100px': '100px',
+      },
       fontFamily: {
         sans: ['Inter', 'Helvetica', 'Arial', 'Lucida', 'sans-serif'],
       },

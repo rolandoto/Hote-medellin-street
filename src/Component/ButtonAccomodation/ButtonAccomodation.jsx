@@ -20,7 +20,10 @@ const ButtonAccomodation =({price,nights,person,handleAddToCart,validPromotions,
                     {promotion  ?   <>
                         <s> <h2 className="text-[20px] font-normal" >${parseInt(price).toLocaleString('es-CO')} cop</h2> </s>
                         <h2 className="text-[20px] font-normal" >${parseInt(validPromotions).toLocaleString('es-CO')} cop</h2> 
-                    </>  :<h2 className="text-[20px] font-normal" >${parseInt(price).toLocaleString('es-CO')} cop</h2>
+                    </>  :  <>
+                             <h2 className="text-[20px] font-normal" >${parseInt(price).toLocaleString('es-CO')} cop</h2>
+                             <h2 className="text-[20px] font-normal" >(IVA incluido)</h2>
+                             </>
                   }
                     <h2  className="text-1xl font-semibold "></h2>
                 </div>

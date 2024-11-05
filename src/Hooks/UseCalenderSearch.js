@@ -16,7 +16,8 @@ const UseCalenderSearch =() =>{
       totalCountAdults,
       adults,
       childrem,
-      getClassNameForDate} = useContext(AutoProvider)
+      getClassNameForDate,
+      isStartDateSelected} = useContext(AutoProvider)
 
 return {
   state,
@@ -30,7 +31,8 @@ return {
   totalCountAdults,
   adults,
   childrem,
-  getClassNameForDate
+  getClassNameForDate,
+  isStartDateSelected
 }
 
 }

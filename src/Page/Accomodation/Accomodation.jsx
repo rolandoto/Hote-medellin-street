@@ -46,10 +46,9 @@ const Accommodation = () => {
     totalCountAdults,
     adults,
     childrem ,
-    getClassNameForDate} =  UseCalenderSearch()
+    getClassNameForDate,
+    isStartDateSelected} =  UseCalenderSearch()
 
-
-    
     const {getCartSubtotal} = UseCart()
     const subtotal = getCartSubtotal()
     const [checkbox,setCheckBox] =useState(false)
@@ -66,7 +65,6 @@ const Accommodation = () => {
       setPromotions(true)
       setVisible(false)
     }
-
 
     const PostHotelByIdHotel = useCallback(async () => {
       setContextMenuPosition(false);
