@@ -1040,32 +1040,32 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
     
     <div
-      className="relative h-screen bg-cover bg-center"
+      className="relative h-[950px] bg-cover bg-center"
       style={{ backgroundImage: 'url("https://github.com/rolandoto/image-pms/blob/main/Logos/537507446.jpg?raw=true")' }}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
       
       {/* Main Message */}
-      <div className="absolute  md:top-1/4  top-0 text-white left-8 md:left-16 max-w-lg">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+      <div className="absolute  xl:top-1/4  top-0 text-white left-8 xl:left-16 max-w-lg">
+        <h1 className="text-4xl xl:text-6xl font-bold leading-tight">
           ¡Queremos que tu estancia sea inolvidable!
         </h1>
-        <p className="mt-4 text-base md:text-lg">
+        <p className="mt-4 text-base xl:text-lg">
           Por eso, te invitamos a descubrir otros rincones de la ciudad y a conocer nuevos lugares.
         </p>
-        <p className="mt-2 text-base md:text-lg">
+        <p className="mt-2 text-base xl:text-lg">
           ¡Consulta nuestras recomendaciones de hoteles para vivir una experiencia inolvidable!
         </p>
       </div>
 
       {/* Image Cards */}
-      <div className="absolute md:top-1/4 top-[350px] left-0 right-8 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-end space-y-4 md:space-y-0 md:space-x-4">
+      <div className="absolute  lg:top-1/4 top-[350px] left-0 right-8 flex flex-col xl:flex-row items-center xl:items-start justify-center xl:justify-end space-y-4 xl:space-y-0 xl:space-x-4">
         {hotelReferid.map((caption, index) => (
           <a
             target="_blank"
             href={caption.url}
             key={index}
-            className="relative w-48 h-32 md:w-64 md:h-48 cursor-pointer rounded overflow-hidden shadow-lg"
+            className="relative w-48 h-32 xl:w-64 xl:h-48 cursor-pointer rounded overflow-hidden shadow-lg"
           >
             <img
               src={caption.image}
