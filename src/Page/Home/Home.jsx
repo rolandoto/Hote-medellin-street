@@ -990,7 +990,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
     </div>
 
     <div className="max-w-7xl mx-auto py-8">
-        <h2 className=" md:text-[30px] text-[25px] text-center text-blue-900  font-lora  mb-6">Nos encantaría mejorar. ¡Compártenos tu experiencia!</h2>
+        <h2 className=" md:text-[30px] text-[25px] text-center text-blue-900  font-lora  mb-6">Nos encantaría mejorar. ¡Compártenos su experiencia!</h2>
               <div className="block " >
                     <div className="flex items-center justify-center ">
                       <div className="max-w-sm p-6">
