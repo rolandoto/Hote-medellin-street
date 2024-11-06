@@ -565,20 +565,22 @@ const [currentIndex, setCurrentIndex] = useState(0);
   const hotelReferid = [
     {
       description: "Viaje de Negocios",
-      image: 'https://github.com/rolandoto/image-pms/blob/main/_MG_0188%20(1).jpg?raw=true', // Replace with actual image URL
-      url: 'https://appartments.com.co/',
+      image: 'https://github.com/rolandoto/image-pms/blob/main/Logos/47street.jpg?raw=true', // Replace with actual image URL
+      url: 'https://47medellinstreethotel.com/',
+    
     },
     {
-      description: "Una viaje romántico en pareja",
+      description: "Viaje romántico en pareja",
       image: 'https://github.com/rolandoto/image-pms/blob/main/MG_8648-scaled.jpg?raw=true', // Replace with actual image URL
       url: 'https://galleryhotel.co/',
     },
     {
-      description: "Viaje para asistir a un evento",
-      image: 'https://github.com/rolandoto/image-pms/blob/main/Logos/47street.jpg?raw=true', // Replace with actual image URL
-      url: 'https://47medellinstreethotel.com/',
+      description: "Viaje Turismo de Salud",
+      image: 'https://github.com/rolandoto/image-pms/blob/main/_MG_0188%20(1).jpg?raw=true', // Replace with actual image URL
+      url: 'https://appartments.com.co/',
     }
   ];
+
   
   const features = [
     {
@@ -987,11 +989,8 @@ const [currentIndex, setCurrentIndex] = useState(0);
       </div>
     </div>
 
-
-
-
     <div className="max-w-7xl mx-auto py-8">
-              <h2 className=" md:text-[30px] text-[25px] text-center text-blue-900  font-lora  mb-6">¿Qué fue lo más te gustó de tu experiencia en el hotel?</h2>
+        <h2 className=" md:text-[30px] text-[25px] text-center text-blue-900  font-lora  mb-6">Nos encantaría mejorar. ¡Compártenos tu experiencia!</h2>
               <div className="block " >
                     <div className="flex items-center justify-center ">
                       <div className="max-w-sm p-6">
@@ -1066,7 +1065,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
             target="_blank"
             href={caption.url}
             key={index}
-            className="relative w-48 h-32 md:w-64 md:h-40 cursor-pointer rounded overflow-hidden shadow-lg"
+            className="relative w-48 h-32 md:w-64 md:h-48 cursor-pointer rounded overflow-hidden shadow-lg"
           >
             <img
               src={caption.image}

@@ -30,7 +30,7 @@ const Footer =({PostHotelByIdHotel}) =>{
       <>
       
       <div
-  className="mt-28 relative bg-cover bg-center h-[700px] md:h-[400px] flex items-center justify-center text-white"
+  className=" relative bg-cover bg-center h-[700px] md:h-[400px] flex items-center justify-center text-white"
   style={{
     backgroundImage: "url('https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp')",
   }}
