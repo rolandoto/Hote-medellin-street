@@ -101,7 +101,7 @@ const Checkout  =() =>{
     const FillContent =() =>{
 
         if(Boolean(reservation)){
-            return ( <ConfirmationMessage title={"Tu reserva ha sido creada"} />)
+            return ( <ConfirmationMessage title={"Reserva creada"} />)
         }
 
         if(!subtotal > 0){
@@ -124,7 +124,7 @@ const Checkout  =() =>{
 
 
     return (<>
-        <Header />
+       
         {loadingCart && <LoadingOverlay title={"Cargando..."} />}
         {loading && <LoadingOverlay title={"Creando reserva..."} />} 
         <WhatsappButton /> 

@@ -38,7 +38,7 @@ const HeaderCheckout =() =>{
                 <div className="absolute inset-0 bg-black opacity-15"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
                     <h1 className="text-4xl md:text-6xl font-normal">{FillContent}</h1>
-                    <p className="mt-4 text-[30px] md:text-5xl font-normal">Gestiona tu reserva</p>
+                    <p className="mt-4 text-[30px] md:text-5xl font-normal">Gestiona Reserva</p>
                 </div>
             </div>)
 

@@ -28,7 +28,6 @@ import { Environment } from "../../Config/Config";
 
 const Accommodation = () => {
 
-
   useEffect(() => {
     // Scrolls to the top of the document on component mount
     window.scrollTo(0, 0);
@@ -180,18 +179,19 @@ const Accommodation = () => {
     useEffect(() =>{
       FetchDate ()
     },[])
-  
+
+
     const FillContent =()=>{
-      if(!formattedStartDate && !formattedEndDate){
-        return   <EmpyCart title={" Busca tu reserva en el calendario."} />
+      if(!hotel?.data){
+        return   <EmpyCart title={" Busca reserva en el calendario."} />
       }
-      if(loading){
+      else if(loading){
        return  (
                 <div  className=" lg:flex    mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
                 <LoadingSkeleton />
                 </div> 
        ) 
-      }if(error){
+      }else if(error){
         return     <EmpyCart title={"Lo sentimos, en este momento no contamos con alojamientos disponibles para las fechas seleccionadas. Por favor, modifique las fechas para generar una nueva búsqueda. O puede contactar a nuestro equipo para obtener más información llamando al +57 +57 3103651661."} />
                 }
         return  <>  {hotel?.data?.map((List,index) => <CardAccomodation  
@@ -244,8 +244,7 @@ const Accommodation = () => {
            
             <Toaster position="bottom-right"  richColors   />
             {loadingCart && <LoadingOverlay title={"Cargando..."} />}
-            <Header/>
-
+          
             <WhatsappButton />
             {subtotal >0 &&<Cart    
                             checkbxo={checkbox} 

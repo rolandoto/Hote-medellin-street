@@ -782,17 +782,15 @@ const [currentIndex, setCurrentIndex] = useState(0);
                   </div>
 
                   {/* Text Section */}
-                  <div className="w-full text-center  md:pl-12">
-                    <h2 className="text-2xl text-center md:text-[35px]   leading-tight  text-[30px] text-[#002f6c] ">
+                  <div className="w-full text-center mt-5  pl-0 md:pl-12">
+                    <h2 className="md:text-center  md:text-[35px]  text-justify  leading-tight  text-[20px] text-[#002f6c] ">
                     El hotel 47 Street en Medellín, cuenta con servicios especiales para viajeros corporativos
                     </h2>
-
-                    <div className=" m-auto max-w-4xl mt-16" >
-                      
-                        <p className="text-[#666666] font-sans   m-auto  text-justify w-[70%]  ">
+                    <div className=" m-auto max-w-4xl  md:mt-16 mt-0" >
+                        <p className="text-[#666666] font-sans  md:w-[70%] w-[100%]  m-auto  text-justify   ">
                           Ubicado en el centro de la ciudad de Medellín, convirtiéndose en el lugar ideal para sus viajes de negocios.
                         </p>
-                        <p className="text-[#666666]  mt-8 text-famlily m-auto  text-justify w-[70%] ">
+                        <p className="text-[#666666]  mt-8 text-famlily m-auto   text-justify md:w-[70%] w-[100%]   ">
                           Cómodas habitaciones, sala de juntas, centro de negocios, parqueadero privado, internet, lavandería* y un excelente servicio nos convierte en su mejor opción para su próximo viaje corporativo.
                         </p>
                     </div>
@@ -810,7 +808,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       {/* encabezado */}
       <header className=" max-w-7xl m-auto mb-8 text-start">
         <p className="font-bold text-[#333333]">Hoteles en el centro de Medellín</p>
-        <h1 className="text-[80px]  text-blue-900">47 Street</h1>
+        <h1 className="text-[40px] md:text-[80px]  text-blue-900">47 Street</h1>
       </header>
 
       <section className="flex max-w-7xl m-auto flex-col md:flex-row justify-center items-center gap-8">
@@ -1002,7 +1000,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                             alt="Hotel"
                           />
                           <div className="ml-4">
-                            <h2 className="text-lg tex-blue-900 font-semibold">Hotel 47 Medellin Street</h2>
+                            <h2 className="text-lg tex-blue-900 font-semibold">Hotel 47 Medellín Street</h2>
                             <div className="flex items-center">
                               <span className="text-blue-900 text-lg font-bold">4.0</span>
                               <div className="flex ml-1">
@@ -1081,15 +1079,11 @@ const [currentIndex, setCurrentIndex] = useState(0);
       </div>
 
     </div>
-
-
           {subtotal >0 &&<Cart    /> } 
           <WhatsappButton />
-            <Footer PostHotelByIdHotel={PostHotelByIdHotel} />
             <FooterHome  PostHotelByIdHotel={PostHotelByIdHotel} />
           </div>
-    )
-    
+    )   
 }
 
 export default Home
