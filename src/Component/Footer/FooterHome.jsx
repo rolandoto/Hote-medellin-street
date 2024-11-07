@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import pdf from "../../Image/contracto.pdf"
 
-const Footer =({PostHotelByIdHotel}) =>{
+const FooterHome =({PostHotelByIdHotel}) =>{
 
     const handleFacebook = () => {
         window.open("https://www.facebook.com/hotel47medellinstreet", "_blank");
@@ -29,7 +29,7 @@ const Footer =({PostHotelByIdHotel}) =>{
     return (
       <>
       
-      <div className=" bg-gray-100 relative bg-cover bg-center h-[700px] md:h-[400px] flex items-center justify-center text-black">
+      <div className=" bg-gray-800 relative bg-cover bg-center h-[700px] md:h-[400px] flex items-center justify-center text-white">
   <div className="relative z-10 flex flex-col md:flex-row md:justify-between items-center w-full px-5 md:px-10 lg:px-20">
     <div className="md:w-[300px] w-full">
       <h1 className="text-3xl md:text-4xl font-bold">Hotel 47 Street</h1>
@@ -61,8 +61,8 @@ const Footer =({PostHotelByIdHotel}) =>{
       <div className="flex space-x-4 mt-4">
         <div aria-label="Facebook" className="text-white text-2xl">
           <div className="flex justify-center space-x-4">
-            <FaInstagram color="black"  className="mr-2 z-50 cursor-pointer" fontSize={30} onClick={handleInstagram} />
-            <FaFacebookF color="black" className="mr-2 z-50 cursor-pointer" fontSize={30} onClick={handleFacebook} />
+            <FaInstagram color="white"  className="mr-2 z-50 cursor-pointer" fontSize={30} onClick={handleInstagram} />
+            <FaFacebookF color="white" className="mr-2 z-50 cursor-pointer" fontSize={30} onClick={handleFacebook} />
           </div>
         </div>
       </div>
@@ -94,4 +94,4 @@ const Footer =({PostHotelByIdHotel}) =>{
     </>
     )
 }
-export default Footer
+export default FooterHome

@@ -30,6 +30,7 @@ import { FaParking } from "react-icons/fa";
 import { PiCallBellFill } from "react-icons/pi";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
+import FooterHome from "../../Component/Footer/FooterHome";
 
 
 function RegistroModal({ isOpen, onClose }) {
@@ -1085,6 +1086,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
           {subtotal >0 &&<Cart    /> } 
           <WhatsappButton />
             <Footer PostHotelByIdHotel={PostHotelByIdHotel} />
+            <FooterHome  PostHotelByIdHotel={PostHotelByIdHotel} />
           </div>
     )
     

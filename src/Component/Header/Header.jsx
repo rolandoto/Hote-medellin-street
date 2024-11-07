@@ -15,11 +15,11 @@ const Header =({scrollToRoomSectionEvent}) =>{
                     <div className="text-3xl font-bold text-indigo-600">
                     <Link to="/">
                         <img 
-                        className="w-[100px]" 
+                        className="w-[70px]" 
                         src="https://github.com/rolandoto/image-pms/blob/main/Logos/47-street.png?raw=true" 
                         alt="Logo de Gallery Hotel" 
-                        width="100" 
-                        height="100"
+                        width="70" 
+                        height="70"
                         />
                     </Link>
                     </div>
