@@ -29,7 +29,7 @@ const Search =({contextShowMenuPeople,
                       <button
                           onClick={() => setContextShowMenuPeople(false)}
                           className=" Button-Search w-[150px] bg-black text-white py-2  rounded hover:bg-black transition duration-200">
-                          Buscar
+                          Siguiente
                       </button>
                   </StyledMenuItemButton>   
               </StyledContextTyeHotel>

@@ -625,7 +625,6 @@ const [currentIndex, setCurrentIndex] = useState(0);
   </h1>
 </div>
 
-      {/* Bottom Navigation */}
       <div className="absolute md:p-0  pr-10  pl-10   max-w-7xl mx-auto bottom-0 left-0 right-0 flex flex-col md:flex-row">
       <div  onClick={scrollToRoomSectionEvent} className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
         <i className="text-4xl mb-4">

@@ -93,7 +93,7 @@ const Footer =({PostHotelByIdHotel}) =>{
 
   <footer className="  m-auto max-w-7xl justify-between bottom-0 md:flex block  right-0 left-0  absolute text-center text-white py-4">
     <p>© Copyright. Todos los derechos reservados.</p>
-    <a target="_blank" href={pdf} className="text-white"> Términos y Condiciones del sitio web</a>
+    <a target="_blank" href={pdf} className="text-white"> Términos y Condiciones del sitio web.</a>
   </footer>
   
 </div>
