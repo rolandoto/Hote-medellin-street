@@ -790,7 +790,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                           Ubicado en el centro de la ciudad de Medellín, convirtiéndose en el lugar ideal para sus viajes de negocios.
                         </p>
                         <p className="text-[#666666]  mt-8 text-famlily m-auto   text-justify md:w-[70%] w-[100%]   ">
-                          Cómodas habitaciones, sala de juntas, centro de negocios, parqueadero privado, internet, lavandería* y un excelente servicio nos convierte en su mejor opción para su próximo viaje corporativo.
+                          Cómodas habitaciones,parqueadero privado, internet, lavandería* y un excelente servicio nos convierte en su mejor opción para su próximo viaje corporativo.
                         </p>
                     </div>
                  
@@ -1038,26 +1038,26 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
     
     <div
-      className="relative h-[950px] bg-cover bg-center"
+      className="relative h-[910px] bg-cover bg-center"
       style={{ backgroundImage: 'url("https://github.com/rolandoto/image-pms/blob/main/Logos/537507446.jpg?raw=true")' }}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
       
       {/* Main Message */}
-      <div className="absolute  xl:top-1/4  top-0 text-white left-8 xl:left-16 max-w-lg">
-        <h1 className="text-4xl xl:text-6xl font-bold leading-tight">
-          ¡Queremos que tu estancia sea inolvidable!
-        </h1>
-        <p className="mt-4 text-base xl:text-lg">
-          Por eso, te invitamos a descubrir otros rincones de la ciudad y a conocer nuevos lugares.
-        </p>
-        <p className="mt-2 text-base xl:text-lg">
-          ¡Consulta nuestras recomendaciones de hoteles para vivir una experiencia inolvidable!
-        </p>
-      </div>
+      <div className="absolute xl:top-1/4 top-[90px] text-white max-w-lg px-6">
+    <h1 className="text-4xl xl:text-6xl font-bold leading-tight">
+      ¡Queremos que tu estancia sea inolvidable!
+    </h1>
+    <p className="mt-4  text-justify text-base  xl:text-lg">
+      Por eso, te invitamos a descubrir otros rincones de la ciudad y a conocer nuevos lugares.
+    </p>
+    <p className="mt-2 text-base xl:text-lg">
+      ¡Consulta nuestras recomendaciones de hoteles para vivir una experiencia inolvidable!
+    </p>
+  </div>
 
       {/* Image Cards */}
-      <div className="absolute  lg:top-1/4 top-[350px] left-0 right-8 flex flex-col xl:flex-row items-center xl:items-start justify-center xl:justify-end space-y-4 xl:space-y-0 xl:space-x-4">
+      <div className="absolute  lg:top-1/4 top-[410px] left-0 right-8 flex flex-col xl:flex-row items-center xl:items-start justify-center xl:justify-end space-y-4 xl:space-y-0 xl:space-x-4">
         {hotelReferid.map((caption, index) => (
           <a
             target="_blank"
