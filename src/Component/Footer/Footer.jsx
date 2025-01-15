@@ -4,6 +4,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import pdf from "../../Image/contracto.pdf"
+import garantia from "../../Image/garantia.pdf"
 
 const Footer =({PostHotelByIdHotel}) =>{
 
@@ -92,8 +93,10 @@ const Footer =({PostHotelByIdHotel}) =>{
   </div>
 
   <footer className="  m-auto max-w-7xl justify-between bottom-0 md:flex block  right-0 left-0  absolute text-center text-white py-4">
-    <p>© Copyright. Todos los derechos reservados.</p>
-    <a target="_blank" href={pdf} className="text-white"> Términos y Condiciones del sitio web.</a>
+  <p>© Copyright. Todos los derechos reservados.</p>
+        <a target="_blank" href={pdf} className="text-white"> Términos y Condiciones del sitio web.</a>
+        <a target="_blank" href={garantia} className="text-white">Política de garantía</a>
+        <a target="_blank"  className="text-white">Política de tratamiento de datos</a>
   </footer>
   
 </div>
