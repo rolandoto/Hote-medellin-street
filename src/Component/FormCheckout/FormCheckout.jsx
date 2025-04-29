@@ -39,7 +39,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
 
     return (<div className= "bg-gray-100 " >
                 <div className="flex justify-center   min-h-screen">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-7xl">
+                    <div className="bg-white mt-12  p-6 rounded-lg shadow-lg w-full max-w-7xl">
                     <div className="flex flex-col md:flex-row">
                         <div className="w-full md:w-1/2 p-4">
                         <h2 className="text-xl font-semibold mb-4">Datos del Huésped</h2>
