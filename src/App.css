@@ -79,3 +79,7 @@
     width: auto;
     height: 200px;
 }
+
+.animation{
+  animation: fadeIn 0.8s ease forwards;
+}

@@ -14,7 +14,6 @@
   .rdrMonth{
     width: 100% !;
   }
- 
 
 
   .border-calender{
@@ -30,10 +29,7 @@
   }
   
   .hover-punter:hover{
-    background: rgb(245, 242, 242);
-    border-radius: 5px;
     cursor: pointer ;
-    border-radius: 10px;
     z-index: 10;
   }
   

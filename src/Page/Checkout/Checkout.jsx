@@ -16,6 +16,7 @@ import Footer from '../../Component/Footer/Footer';
 import ConfirmationMessage from '../../Component/ConfirmationMessage/ConfirmationMessage';
 import WhatsappButton from '../../Component/WhatsappButton/WhatsappButton';
 import { Environment } from '../../Config/Config';
+import HeaderStep from '../../Component/Header/HeaderStep';
 
 const Checkout  =() =>{
     useFetchData();
@@ -39,7 +40,8 @@ const Checkout  =() =>{
 
     const Rooms = cart.map(item => ({
         "roomTypeID": item.roomTypeID,
-        "quantity": item.quantity
+        "quantity": item.quantity,
+ 
     }));
 
 
@@ -62,7 +64,8 @@ const Checkout  =() =>{
     }));
 
    
-    const subtotalPayment =  night[0]?.price
+    const subtotalPayment = night.reduce((total, item) => total + (item.price || 0), 0);
+    
     const StartDate = night[0]?.startDate
     const EndDate = night[0]?.endDate
 
@@ -128,7 +131,7 @@ const Checkout  =() =>{
         {loadingCart && <LoadingOverlay title={"Cargando..."} />}
         {loading && <LoadingOverlay title={"Creando reserva..."} />} 
         <WhatsappButton /> 
-        <HeaderCheckout />
+        <HeaderStep currentStep={2} />
         <Toaster position="bottom-right"  richColors   />  
             {FillContent()}
 

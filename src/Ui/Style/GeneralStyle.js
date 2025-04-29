@@ -31,11 +31,10 @@ export const fadeIn = keyframes`
   }
 `;
 
-
 export const StyledContextTyeHotel = styled.div`
 top:${(props) => `${props.top}px`};
 position: absolute;
-left:  400px;
+left:  450px;
 width: 300px;
 height: 120px;
 right: 0px;
@@ -112,14 +111,30 @@ export const StyleSpanIcons = styled.span`
 display: flex;
 align-items: center
 margin-right: 10px;
-
 `
 
 export const StyleGroup= styled.div`
 `
 
-
 export const MainProduct = styled.div`
+
+max-width: 1000px;
+width: 100%;
+box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
+justify-content: space-between;
+align-items: center;
+border-radius:45px;
+ animation: ${fadeIn} 0.8s ease forwards; // Apply the fadeIn animation
+  &.fade-in {
+    animation: ${fadeIn} 0.3s ease forwards; // Apply the fadeIn animation
+  }
+@media(min-width: 1024) {
+  dispaly: block;
+}
+`
+
+
+export const MainProductHome = styled.div`
 width: 100%;
 box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
 justify-content: space-between;
@@ -131,10 +146,26 @@ background: white;
 }
 `
 
+
+export const MainAccomodationSection = styled.div`
+
+
+ animation: ${fadeIn} 0.8s ease forwards; // Apply the fadeIn animation
+  &.fade-in {
+    animation: ${fadeIn} 0.3s ease forwards; // Apply the fadeIn animation
+  }
+
+`
+
+
+export const ImgAccomodation = styled.img`
+${fadeInImg({time:"2s"})}
+`
+
 export const ImginProduct = styled.img`
 width: 30%;
 object-fit: cover;
-height:16rem;
+height:17rem;
 
 
 ${fadeInImg({time:"2s"})}
@@ -224,7 +255,18 @@ export const  ContainerFooter = styled.footer`
 `
 
 
-export const  BorderInput = styled.div`
+export const BorderInput = styled.div`
+  cursor: pointer;
+  width: 100%;
+  font-size: 100%;
+  color: black;
+  @media (max-width: 1024px) {
+    border-left: none;
+  }
+`;
+
+
+export const  BorderInputHome = styled.div`
 border-left:1px solid rgb(224, 224, 224);
 cursos:pointer;
 width:100%;
@@ -235,14 +277,24 @@ width:100%;
 }
 `
 
-export const  BorderInputInitial = styled.div`
-cursos:pointer;
+
+export const BorderInputInitial = styled(BorderInput)`
+  padding: 16px;
+  background: white;
+  box-shadow: 17px 20px 40px rgba(0, 0, 0, 0.21);
+  border-radius: 39px;
+`;
+
+
+export const BorderInputInitialHome = styled(BorderInput)`
+ cursos:pointer;
 width:100%;
 @media(max-width: 1024px) {
   border-left:none;
   border-bottom: 1px solid rgb(224, 224, 224)
 }
-`
+`;
+
 
 export const MainAccomodation = styled.main`
 margin-top: -65px;
@@ -267,14 +319,30 @@ export const BorderSearch = styled.div`
   border-bottom: 1px solid rgb(224, 224, 224)
 }
 `
-
 export const ContainerButtonSearch = styled.div`
+padding: 13px;
+`
+
+
+export const ContainerButtonSearchHome = styled.div`
 
 `
+
 export const ButtonSearch = styled.button`
-border-radius: 10px;
+border-radius: 25px;
+
+margin:auto;
 @media(max-width: 1500px) {
-  
+}
+`
+
+
+export const ButtonSearchHome = styled.button`
+border-radius: 15px;
+
+
+margin:auto;
+@media(max-width: 1500px) {
 }
 `
 
@@ -287,7 +355,7 @@ margin-left: -20px;
 
 export const Label = styled.div`
   display: inline-block;
-  background-color: #919191;
+  background-color: black;
   color: white;
   padding: 5px 10px;
   font-size: 14px;
@@ -307,7 +375,7 @@ export const Label = styled.div`
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid #919191;
+    border-right: 10px solid black;
     transform: translateY(-50%);
   }
 `;

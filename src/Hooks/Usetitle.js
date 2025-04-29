@@ -7,7 +7,7 @@ const Usetitle =({title}) =>{
     useEffect(() =>{
         const previusTitle = preveTitle.current
         
-        document.title = `${title} | Miduzon`
+        document.title = `${title}`
         
         //cuando se desmonte el previus le va a pasar el previusTitle
         //que tenia  

@@ -1,5 +1,6 @@
 import React from "react";
 import { BorderInput, BorderInputInitial, ButtonSearch, ContainerButtonSearch, MainAccomodation, MainAccomodationRoomSearch, MainProduct } from "../../Ui/Style/GeneralStyle";
+import { FiArrowRight } from "react-icons/fi";
 
 const CalenderSearch =({HandClickMenuPeople,
                         HandClickMenuEnd
@@ -8,35 +9,34 @@ const CalenderSearch =({HandClickMenuPeople,
                         formattedStartDateToString,
                         formattedEndDateToString,
                         totalCountAdults}) =>{
+                   
 
     return (
-        <MainAccomodationRoomSearch className="  lg:flex   mx-auto   max-w-5xl items-center justify-between p-4 lg:px-8">
-            <MainProduct className="mx-auto  	 lg:flex  items-center justify-between p-4 rounded-lg shadow-2xl ">
-                           
-                            <BorderInputInitial className="flex flex-col hover-punter "  onClick={HandClickMenu}>
-                                    <span className="mb-2 font-medium" >Llegada :</span>
-                                    <span>  {formattedStartDateToString === 'fecha inválida' ? '-- / -- / --' : formattedStartDateToString}</span>
-                            </BorderInputInitial>
-                            <BorderInput className="flex flex-col  hover-punter" onClick={HandClickMenuEnd}>
-                                    <span className="mb-2 font-medium">Salida:</span>
-                                    <span>{formattedEndDateToString === 'fecha inválida' ? '-- / -- / --' : formattedEndDateToString}</span>
-                            </BorderInput>
-
-                            <BorderInput className="flex flex-col hover-punter" onClick={HandClickMenuPeople}  >
-                                <span className="mb-2 font-medium">Personas:</span>
-                                <span>{totalCountAdults} </span>
-                            </BorderInput>
-                            <ContainerButtonSearch className="flex flex-col ">
-                                <ButtonSearch className=" lg:hidden  block  w-full bg-black text-white py-4    rounded hover:bg-black transition duration-200" onClick={onsubmit}>
-                                        Buscar
-                                </ButtonSearch>
-
-                                <ButtonSearch className=" hidden  lg:block w-[150px]   bg-black text-white py-4    rounded hover:bg-black transition duration-200" onClick={onsubmit}>
-                                        Buscar
-                                </ButtonSearch>
+       
+            <MainProduct className=" mt-[90px] m-auto lg:flex block   ">
+                        <BorderInputInitial className=" flex text-start flex-col hover-punter "  onClick={HandClickMenu}>
+                        <span className="  font-bold   " >Llegada :</span>
+                        <span className=" " >  {formattedStartDateToString === 'fecha inválida' ? '-- / -- / --' : formattedStartDateToString}</span>
+                        </BorderInputInitial>
+                        <BorderInput className="flex flex-col  text-start  hover-punter" onClick={HandClickMenuEnd}>
+                        <span className=" font-bold">Salida :</span>
+                        <span className="   " >{formattedEndDateToString === 'fecha inválida' ? '-- / -- / --' : formattedEndDateToString}</span>
+                        </BorderInput>
+                        <BorderInput className="flex flex-col  text-start  hover-punter"  onClick={HandClickMenuPeople} >
+                        <span className=" font-bold">Huesped :</span>
+                        <span className="  " >{totalCountAdults}</span>
+                        </BorderInput>
+                        <ContainerButtonSearch  className="  ">
+                                        <ButtonSearch className=" lg:hidden justify-center  items-center    flex  cursor-pointer z-40   w-full bg-gray-800 text-white py-4    rounded-full  transition duration-200" onClick={onsubmit}>
+                                                Reservar <FiArrowRight fontSize={25}/>
+                                        </ButtonSearch>
+                                        <ButtonSearch className=" justify-center  items-center lg:flex hidden cursor-pointer    p-4 lg:block  w-[150px]  bg-gray-800 text-white py-4     rounded-full   transition duration-200" onClick={onsubmit}>
+                                        
+                                        Reservar  <FiArrowRight fontSize={23}/>
+                                        </ButtonSearch>
                             </ContainerButtonSearch>
             </MainProduct>
-            </MainAccomodationRoomSearch>    
+        
     )
 }
 

@@ -1,4 +1,3 @@
-
 import { PiSnowflakeThin } from "react-icons/pi";
 import { CiWifiOn } from "react-icons/ci";
 import { PiAirplayLight } from "react-icons/pi";
@@ -6,7 +5,7 @@ import { BsSafe  } from "react-icons/bs";
 import { PiShowerLight } from "react-icons/pi";
 import { PiTowelLight } from "react-icons/pi";
 import { CiCircleCheck } from "react-icons/ci";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaCheckCircle, FaWhatsapp } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
@@ -30,9 +29,9 @@ import { RiBankFill } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import { Tooltip } from "react-tooltip";
 import { PiBedThin } from "react-icons/pi";
-import { FaCheckCircle } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
-
+import { ImUsers } from "react-icons/im";
+import { MdOutlineKingBed } from "react-icons/md";
 
 export const IconsSnow =() =>{
     const key = `my-tooltip`;
@@ -170,10 +169,10 @@ export const IconFaMapMarkerAlt =() =>{
     return <FaMapMarkerAlt className="mr-2" fontSize={30}  />
 }
 export const IconFaInstagram =({onclick}) =>{
-    return <FaInstagram className="mr-2 z-50"  fontSize={30} onClick={onclick}  />
+    return <FaInstagram className="mr-2" fontSize={30} onClick={onclick}  />
 }
 export const IconFaFacebookF =({onclick}) =>{
-    return <FaFacebookF className="mr-2 z-50" fontSize={30}  onClick={onclick} />
+    return <FaFacebookF className="mr-2" fontSize={30}  onClick={onclick} />
 }
 export const IconFaYoutube =() =>{
     return <FaYoutube className="mr-2" fontSize={30}  />
@@ -205,7 +204,7 @@ export const IconCiShoppingCart =() =>{
     return <CiShoppingCart   color="white" className="" fontSize={35}  />
 }
 export const IconsTiHome =() =>{
-    return <TiHome   color="black" className="" fontSize={30}  />
+    return <TiHome   color="#ff7a45" className="" fontSize={30}  />
 }
 
 export const IconsFaGlassMartini =() =>{
@@ -220,6 +219,8 @@ export const IconsGiForkKnifeSpoon =() =>{
 export const IconsaCar =() =>{
     return <FaCar   color="black" className="" fontSize={30}  />
 }
+
+
 
 export const IconsFaSquareParking =() =>{
     return <FaSquareParking   color="black" className="" fontSize={30}  />
@@ -242,15 +243,21 @@ export const IconsRiBankFill =() =>{
     return <RiBankFill   color="black" className="" fontSize={30}  />
 }
 
+
 export const IconsMdEmail =({color}) =>{
     return <MdOutlineEmail   color={color} className="mr-2" fontSize={30}  />
 }
 
+
 export const IconFaCheckCircle  =({color}) =>{
-    return <FaCheckCircle    color={color} className="mr-2" fontSize={70}  />
+    return <FaCheckCircle  color={color} className="mr-2" fontSize={70}  />
 }
 
 export const IconFaUser  =({color}) =>{
-    return <FaUser   color={color} fontSize={25}  />
+    return <ImUsers   color={color} fontSize={20}  />
 }
 
+
+export const IconMdOutlineKingBed   =({color}) =>{
+    return <MdOutlineKingBed    color={color} fontSize={25}  />
+}

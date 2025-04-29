@@ -1,22 +1,23 @@
 import { useAppDispatch } from "../Hooks/Redux"
-import { loading,setHotel,setError,setListHotel,setlistoHotelError,loadingHotel } from "../reducers/ApiHotelByIdReduccers"
+import { loading,setHotel,setError,setListHotel,setlistoHotelError,loadingHotel} from "../reducers/ApiHotelByIdReduccers"
 import HttpClient from "../HttpClient"
 
 const UseHotelActions =() =>{
 
     const dispatch =  useAppDispatch()
 
-    const getHotel =async({propertyID,startDate,endDate,token,counPeople}) =>{
+    const getHotel =async({propertyID,startDate,endDate,token,counPeople,promoCode}) =>{
         dispatch(loading())
         try {
-            const response  = await  HttpClient.getAvailableRoomTypes({propertyID,startDate,endDate,token,counPeople})
+            const response  = await  HttpClient.getAvailableRoomTypes({propertyID,startDate,endDate,token,counPeople,promoCode})
             if(response){
                 dispatch(setHotel(response)) 
+                window.scrollTo({ top: 300, behavior: "smooth" });
             }else{
                 dispatch(setError("no found")) 
             }
         } catch (error) {
-
+        
             dispatch(setError("no found")) 
         }
     }
@@ -36,10 +37,11 @@ const UseHotelActions =() =>{
         }
     }
 
-    
+   
+
     return {
         getHotel,
-        getListHotel
+        getListHotel,
     }
 
 }

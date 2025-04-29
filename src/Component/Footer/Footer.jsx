@@ -56,7 +56,7 @@ const Footer =({PostHotelByIdHotel}) =>{
       <h2 className="text-lg font-semibold">Contacto</h2>
       <div className="flex items-center mt-4">
         <span><FaPhoneAlt color="white" /></span>
-        <p className="ml-2">+57 310 365 16 61</p>
+        <p className="ml-2">+57 3018706434</p>
       </div>
       <div className="flex items-center mt-2">
         <span>✉️</span>
@@ -93,12 +93,11 @@ const Footer =({PostHotelByIdHotel}) =>{
   </div>
 
   <footer className="  m-auto max-w-7xl justify-between bottom-0 md:flex block  right-0 left-0  absolute text-center text-white py-4">
-  <p>© Copyright. Todos los derechos reservados.</p>
+        <p>© Copyright. Todos los derechos reservados.</p>
         <a target="_blank" href={pdf} className="text-white"> Términos y Condiciones del sitio web.</a>
         <a target="_blank" href={garantia} className="text-white">Política de garantía</a>
         <a target="_blank"  className="text-white">Política de tratamiento de datos</a>
   </footer>
-  
 </div>
 
     </>
