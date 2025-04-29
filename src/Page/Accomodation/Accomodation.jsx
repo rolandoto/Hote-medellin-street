@@ -27,8 +27,10 @@ import {  Tag, Coffee, Clock} from 'lucide-react';
 import HeaderStep from "../../Component/Header/HeaderStep";
 import FooterAccomodation from "../../Component/Footer/FooterAccomodation";
 import Footer from "../../Component/Footer/Footer";
+import Usetitle from "../../Hooks/Usetitle";
 
 const Accommodation = () => {
+  Usetitle({title:"Habitaciones Hotel Medellín street 47   Web Oficial."})
 
   useEffect(() => {
     window.scrollTo(0, 0);

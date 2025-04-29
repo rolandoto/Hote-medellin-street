@@ -10,13 +10,12 @@ import LoadingOverlay from '../../Component/LoadingCreateReserva/LoadingOverlay'
 import useFormValues from '../../Hooks/useFormValues';
 import useFetchData from '../../Hooks/useFetchData';
 import useValidation from '../../Hooks/ValidateFormValues';
-import HeaderCheckout from '../../Component/HeaderCheckout/HeaderCheckout';
 import FormCheckout from '../../Component/FormCheckout/FormCheckout';
-import Footer from '../../Component/Footer/Footer';
 import ConfirmationMessage from '../../Component/ConfirmationMessage/ConfirmationMessage';
 import WhatsappButton from '../../Component/WhatsappButton/WhatsappButton';
 import { Environment } from '../../Config/Config';
 import HeaderStep from '../../Component/Header/HeaderStep';
+import Footer from '../../Component/Footer/Footer';
 
 const Checkout  =() =>{
     useFetchData();
@@ -36,12 +35,14 @@ const Checkout  =() =>{
     const cardNumberString = cardNumberArray.join("");
     const now = moment().format('YYYY-MM-DD HH:mm:ss');
 
+   
     const validate = useValidation();
 
     const Rooms = cart.map(item => ({
         "roomTypeID": item.roomTypeID,
         "quantity": item.quantity,
- 
+        "rateID": 2550029,
+        
     }));
 
 
@@ -56,19 +57,20 @@ const Checkout  =() =>{
     }));
 
 
-    
     const night = cart.map(item => ({
         startDate: item?.startDate,
         endDate: item?.endDate,
-        price: item?.Price
+        price: item?.Price,
+        validCode: item?.validCode
     }));
 
    
     const subtotalPayment = night.reduce((total, item) => total + (item.price || 0), 0);
-    
     const StartDate = night[0]?.startDate
     const EndDate = night[0]?.endDate
+    const validCode = night[0]?.validCode
 
+  
     const handleSubmit = async(e) => {
         e.preventDefault();
         const errors = validate(formValues);
@@ -76,6 +78,7 @@ const Checkout  =() =>{
         if (Object.keys(errors).length === 0) {
         await PostCreateHotel({ propertyID:Environment.propertyID,
                                 token:Environment.Token,
+                                promoCode:validCode,
                                 startDate:StartDate,
                                 endDate:EndDate,
                                 guestFirstName:formValues.name,
@@ -92,14 +95,11 @@ const Checkout  =() =>{
                                 cvc:formValues.cvc,
                                 card_holder:formValues.cardName,
                                 subtotal:subtotalPayment
-                            })} 
+                            })}     
     
     };
 
-    /*const togglePanel = () => {
-      setIsOpen(!isOpen);
-    };
-*/
+
 
     const FillContent =() =>{
 
