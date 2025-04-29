@@ -28,7 +28,7 @@ const HeaderStep =({currentStep}) =>{
                 .map(({ step, label }) => (
                 <div
                     key={step}
-                    className="flex items-center gap-1 bg-gray-800 font-semibold"
+                    className="flex items-center gap-1 text-gray-800 font-semibold"
                 >
                     <span className="rounded-full w-5 h-5 text-xs flex items-center justify-center bg-gray-800 text-white">
                     {step}
