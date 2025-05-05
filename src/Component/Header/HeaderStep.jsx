@@ -12,14 +12,12 @@ const HeaderStep =({currentStep}) =>{
     return (
         <header className="fixed top-0 left-0 w-full z-50 bg-white border-b shadow-sm px-4 sm:px-6 py-3">
         <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          
-          {/* Logo */}
           <div className="flex justify-between items-center gap-4 sm:gap-10 w-full sm:w-auto">
             <Link to="/">
             <img
-              src="https://github.com/rolandoto/image-pms/blob/main/Logos/47-street.png?raw=true"
+              src="https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/47-street.png"
               alt="Logo"
-              className="h-8 sm:h-10"
+              className="h-10 sm:h-14"
             />
             </Link>
           <div className="md:hidden block">

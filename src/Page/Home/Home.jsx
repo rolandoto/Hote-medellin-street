@@ -4,17 +4,8 @@ import { DateRange } from 'react-date-range';
 import esLocale from 'date-fns/locale/es';
 import Search from "../../Component/Search/Search";
 import {useNavigate } from "react-router-dom";
-import Header from "../../Component/Header/Header";
-import CalenderSearchHome from "../../Component/CalenderSearch/CalenderSearchHome";
-import TitleWelcome from "../../Component/TitleWelcome/TitleWelcome";
-import Features from "../../Component/Features/Features";
-import Footer from "../../Component/Footer/Footer";
-import AccordionAsk from "../../Component/AccordionAsk/AccordionAsk";
-import Events from "../../Component/Events/Events";
-import RoomDetail from "../../Component/RoomDetail/RoomDetail";
-import RoomPresentaion from "../../Component/RoomPresentation/RoomPresentation";
 import "./home.css"
-import { IconRiCloseLargeLine, IconsFaBanSmoking, IconsFaConciergeBell, IconsFaGlassMartini, IconsFaSquareParking, IconsFaStore, IconsGiForkKnifeSpoon, IconsRiBankFill, IconsaCar } from "../../Component/Icons/Icons";
+import { IconRiCloseLargeLine } from "../../Component/Icons/Icons";
 import 'react-date-range/dist/styles.css'; // import the default styles
 import 'react-date-range/dist/theme/default.css'; // import the default theme
 import moment from 'moment';
@@ -208,60 +199,12 @@ const Home =() =>{
               }
   }
 
-  const FindIdHotel=(hotel) =>{
-		return hotel.id_hotel ==2
-	}
 	
-	const hotel = hotelList.find(FindIdHotel)
-
+	
 
 const subtotal = getCartSubtotal()
 
-  const reviews = [
-
-    {
-      id: 1,
-      name: "Robinson Vasquez",
-      date: "hace un mes",
-      rating: 4,
-      text: "Un ambiente tranquilo, buena ubicación!",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/Robinson(3).png?raw=true", // Add the path to the avatar image if available
-    },
-    {
-      id: 2,
-      name: "Bárbara Pérez",
-      date: "hace un mes",
-      rating: 5,
-      text: "",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/Cielo.png?raw=true", // Add the path to the avatar image if available
-    },
-    {
-      id: 3,
-      name: "Esleidy Largo",
-      date: "",
-      rating: 5,
-      text: "",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/Esleidy(3).png?raw=true", // Add the path to the avatar image if available
-    },
-   
-    {
-      id: 4,
-      name: "IMPORT JHEYSSI SAS",
-      date: "hace 5 meses",
-      rating: 5,
-      text: "Un poquito lejos del centro, sobre la iluminación es perfecta para descansar y la ubicación estratégica para encender las luces por zonas me parece muy bueno para el precio! Más amabilidad es lo único que podría pedir, con esto no digo que son groseros, mejor dicho son intermedio! 👍",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/importadora(2).png?raw=true",
-    },
-    {
-      id: 5,
-      name: "Angie gil",
-      date: "hace un mes",
-      rating: 5,
-      text: "Es un lugar muy agradable, con un restaurante encantador, buena atención al cliente, las habitaciones aseadas y ordenadas; el único defecto es que las habitaciones no cuentan con agua caliente y no hay TV por cable, pero por lo demás todo está súper bien.      ",
-      avatar: "https://github.com/rolandoto/image-pms/blob/main/angie(2).png?raw=true",
-    }
-  ];
-  
+ 
   /*const features = [
       { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
       { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
@@ -343,41 +286,7 @@ const subtotal = getCartSubtotal()
       setContextShowMenuPeople(false)
     }             
 
-    const faqs = [
-      {
-        question: '¿Cuáles son los sitios turísticos de la ciudad y si están cerca al hotel?',
-        answer: (
-          <ul className="list-disc list-inside">
-            <li>Teatros (3 a 9 min caminando)</li>
-            <li>Museo de Antioquia</li>
-            <li>Plaza Botero</li>
-            <li>Jardín Botánico de Medellín</li>
-            <li>Parque Lleras</li>
-            <li>Comuna 13</li>
-          </ul>
-        ),
-      },
-      {
-        question: '¿Cómo es la seguridad del sector? ¿se puede salir en la noche?',
-        answer: 'La seguridad del sector es buena, pero siempre se recomienda tomar precauciones normales como en cualquier ciudad. Es seguro salir en la noche, especialmente en áreas concurridas y turísticas.',
-      },
-      {
-        question: '¿Cuáles son los mejores centros comerciales de la ciudad de Medellín?',
-        answer: (
-          <ul className="list-disc list-inside">
-            <li>Centro Comercial Santa Fe</li>
-            <li>Centro Comercial El Tesoro</li>
-            <li>Centro Comercial Oviedo</li>
-            <li>Centro Comercial Premium Plaza</li>
-          </ul>
-        ),
-      },
-      {
-        question: '¿Dónde puedo cambiar divisas?',
-        answer: 'Puede cambiar divisas en casas de cambio ubicadas en centros comerciales, en el aeropuerto, y en diversas partes del centro de la ciudad.',
-      },
-    ];
-
+  
 
 
     const rooms = [
@@ -586,19 +495,19 @@ const [currentIndex, setCurrentIndex] = useState(0);
   const features = [
     {
       title: "Desayuno incluido",
-      image: "https://github.com/rolandoto/image-pms/blob/main/untitled%20folder/desayunof.jpg?raw=true",
+      image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/desayunof.jpg",
     },
     {
       title: "Parqueadero privado",
-      image: "https://github.com/rolandoto/image-pms/blob/main/untitled%20folder/parkingf.jpg?raw=true",
+      image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/parkingf.jpg",
     },
     {
       title: "Centro de negocios",
-      image: "https://github.com/rolandoto/image-pms/blob/main/untitled%20folder/negociosf.jpg?raw=true",
+      image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/negociosf.jpg",
     },
     {
       title: "Recepción 24 horas",
-      image: "https://github.com/rolandoto/image-pms/blob/main/untitled%20folder/recepcionf.jpg?raw=true",
+      image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/recepcionf.jpg",
     },
   ];
 
@@ -610,7 +519,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
           {FillContent}
            <div
       className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('https://github.com/rolandoto/image-pms/blob/main/Logos/537507446.jpg?raw=true')" }} // Asegúrate de que la imagen esté en la carpeta `public`
+      style={{ backgroundImage: "url('https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/537507446.jpg')" }} // Asegúrate de que la imagen esté en la carpeta `public`
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -772,15 +681,15 @@ const [currentIndex, setCurrentIndex] = useState(0);
               </div>
              
               <div className="flex flex-col  m-auto max-w-7xl md:flex-row items-center justify-center p-8 bg-white">
-                  {/* Image Section */}
+                 
                   <div className="w-full md:w-1/2 flex justify-start ">
                     <img
-                      src="https://github.com/rolandoto/image-pms/blob/main/Logos/47street.jpg?raw=true" // Cambia esta ruta a la de tu imagen en la carpeta `public`
+                      src="https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/47street.jpg" // Cambia esta ruta a la de tu imagen en la carpeta `public`
                       className="w-2/2 h-[650px] rounded-lg shadow-lg"
                     />
                   </div>
 
-                  {/* Text Section */}
+                 
                   <div className="w-full text-center mt-5  pl-0 md:pl-12">
                     <h2 className="md:text-center  md:text-[35px]  text-justify  leading-tight  text-[20px] text-[#002f6c] ">
                     El hotel 47 Street en Medellín, cuenta con servicios especiales para viajeros corporativos
@@ -804,49 +713,49 @@ const [currentIndex, setCurrentIndex] = useState(0);
                 </div>
 
                 <div className="bg-gray-100 min-h-screen p-8">
-      {/* encabezado */}
-      <header className=" max-w-7xl m-auto mb-8 text-start">
-        <p className="font-bold text-[#333333]">Hoteles en el centro de Medellín</p>
-        <h1 className="text-[40px] md:text-[80px]  text-blue-900">47 Street</h1>
-      </header>
-
-      <section className="flex max-w-7xl m-auto flex-col md:flex-row justify-center items-center gap-8">
-      <button
-        onClick={prevSlide}
-        disabled={currentIndex === 0}
-        className="p-2   text-white disabled:opacity-50"
-      >
-        <AiOutlineLeft color="black" fontSize={30}  />
-      </button>
-      {rooms.slice(currentIndex, currentIndex + 2).map((item, index) => (
-  <div key={index} className="bg-white shadow-lg overflow-hidden">
-    <div className="relative">
-      <img
-        src={item.image}
-        alt={item.title || "business room"}
-        className="w-[850px] h-[350px] object-cover"
-      />
-    </div>
-    <div className="p-4 text-center">
-
-      <h2 className="text-blue-900 text-[20px]  sm:text-[20px] md:text-[20px] font-bold ">{item.title}</h2>
-      <p
-        className="text-gray-600 mt-4 text-justify  "
-        dangerouslySetInnerHTML={{ __html: item.roomTypeDescription }}
-      ></p>
-
-
-      <p className="text-blue-900 font-bold ">
-        ${(item.price).toLocaleString('es-CO')} COP (IVA incluido)
-      </p>
-
-      <button onClick={PostHotelByIdHotel} className=" m-auto mt-8 w-full px-8 py-4 bg-[#002f6c] text-white hover:bg-[#002f6c] transition-colors">
-        Reservar
-      </button>
-    </div>
    
-  </div>
-))}
+                <header className=" max-w-7xl m-auto mb-8 text-start">
+                  <p className="font-bold text-[#333333]">Hoteles en el centro de Medellín</p>
+                  <h1 className="text-[40px] md:text-[80px]  text-blue-900">47 Street</h1>
+                </header>
+
+                <section className="flex max-w-7xl m-auto flex-col md:flex-row justify-center items-center gap-8">
+                <button
+                  onClick={prevSlide}
+                  disabled={currentIndex === 0}
+                  className="p-2   text-white disabled:opacity-50"
+                >
+                  <AiOutlineLeft color="black" fontSize={30}  />
+                </button>
+                {rooms.slice(currentIndex, currentIndex + 2).map((item, index) => (
+            <div key={index} className="bg-white shadow-lg overflow-hidden">
+              <div className="relative">
+                <img
+                  src={item.image}
+                  alt={item.title || "business room"}
+                  className="w-[850px] h-[350px] object-cover"
+                />
+              </div>
+              <div className="p-4 text-center">
+
+                <h2 className="text-blue-900 text-[20px]  sm:text-[20px] md:text-[20px] font-bold ">{item.title}</h2>
+                <p
+                  className="text-gray-600 mt-4 text-justify  "
+                  dangerouslySetInnerHTML={{ __html: item.roomTypeDescription }}
+                ></p>
+
+
+                <p className="text-blue-900 font-bold ">
+                  ${(item.price).toLocaleString('es-CO')} COP (IVA incluido)
+                </p>
+
+                <button onClick={PostHotelByIdHotel} className=" m-auto mt-8 w-full px-8 py-4 bg-[#002f6c] text-white hover:bg-[#002f6c] transition-colors">
+                  Reservar
+                </button>
+              </div>
+            
+            </div>
+          ))}
       <button
         onClick={nextSlide}
         disabled={currentIndex >= rooms.length - 2}
@@ -878,9 +787,9 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
     <div className="min-h-screen bg-gray-50 p-6 md:p-12" ref={roomEventsSectionRef} >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-        {/* Left Column - Content */}
+   
         <div className="space-y-8">
-          {/* Header Section */}
+        
           <div className="space-y-2">
             <p className="text-sm uppercase text-gray-600">SOLO BENEFICIOS</p>
             <h1 className="text-4xl md:text-5xl  text-blue-900">
@@ -979,7 +888,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
         <div className="relative h-[600px]  overflow-hidden">
           <img 
-            src="https://github.com/rolandoto/image-pms/blob/main/untitled%20folder/47street-t.jpg?raw=true"
+            src="https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/47street-t.jpg"
             alt="Business lounge with comfortable seating and city view"
             className="w-full h-full object-cover"
           />
@@ -995,7 +904,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                         <div className="flex items-center">
                           <img
                             className="w-12 h-12 rounded-full"
-                            src="https://github.com/rolandoto/image-pms/blob/main/Logos/47street.jpg?raw=true"
+                            src="https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/47street.jpg"
                             alt="Hotel"
                           />
                           <div className="ml-4">
