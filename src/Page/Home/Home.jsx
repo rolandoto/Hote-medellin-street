@@ -951,21 +951,18 @@ const [currentIndex, setCurrentIndex] = useState(0);
       style={{ backgroundImage: 'url("https://raw.githubusercontent.com/rolandoto/image-pms/blob/main/Logos/537507446.jpg?raw=true")' }}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
-      
-      {/* Main Message */}
       <div className="absolute xl:top-1/4 top-[90px] text-white max-w-lg px-6">
-    <h1 className="text-4xl xl:text-6xl font-bold leading-tight">
-      ¡Queremos que tu estancia sea inolvidable!
-    </h1>
-    <p className="mt-4  text-justify text-base  xl:text-lg">
-      Por eso, te invitamos a descubrir otros rincones de la ciudad y a conocer nuevos lugares.
-    </p>
-    <p className="mt-2 text-base xl:text-lg">
-      ¡Consulta nuestras recomendaciones de hoteles para vivir una experiencia inolvidable!
-    </p>
-  </div>
+      <h1 className="text-4xl xl:text-6xl font-bold leading-tight">
+        ¡Queremos que tu estancia sea inolvidable!
+      </h1>
+      <p className="mt-4  text-justify text-base  xl:text-lg">
+        Por eso, te invitamos a descubrir otros rincones de la ciudad y a conocer nuevos lugares.
+      </p>
+      <p className="mt-2 text-base xl:text-lg">
+        ¡Consulta nuestras recomendaciones de hoteles para vivir una experiencia inolvidable!
+      </p>
+    </div>
 
-      {/* Image Cards */}
       <div className="absolute  lg:top-1/4 top-[410px] left-0 right-8 flex flex-col xl:flex-row items-center xl:items-start justify-center xl:justify-end space-y-4 xl:space-y-0 xl:space-x-4">
         {hotelReferid.map((caption, index) => (
           <a
@@ -985,12 +982,11 @@ const [currentIndex, setCurrentIndex] = useState(0);
           </a>
         ))}
       </div>
-
-    </div>
-          {subtotal >0 &&<Cart    /> } 
-          <WhatsappButton />
-            <FooterHome  PostHotelByIdHotel={PostHotelByIdHotel} />
-          </div>
+      </div>
+      {subtotal >0 &&<Cart    /> } 
+      <WhatsappButton />
+        <FooterHome  PostHotelByIdHotel={PostHotelByIdHotel} />
+      </div>
     )   
 }
 
