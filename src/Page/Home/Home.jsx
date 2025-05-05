@@ -475,18 +475,18 @@ const [currentIndex, setCurrentIndex] = useState(0);
   const hotelReferid = [
     {
       description: "Viaje de Negocios",
-      image: 'https://github.com/rolandoto/image-pms/blob/main/Logos/47street.jpg?raw=true', // Replace with actual image URL
+      image: 'https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/47street.jpg', // Replace with actual image URL
       url: 'https://47medellinstreethotel.com/',
     
     },
     {
       description: "Viaje romántico en pareja",
-      image: 'https://github.com/rolandoto/image-pms/blob/main/MG_8648-scaled.jpg?raw=true', // Replace with actual image URL
+      image: 'https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/MG_8648-scaled.jpg', // Replace with actual image URL
       url: 'https://galleryhotel.co/',
     },
     {
       description: "Viaje Turismo de Salud",
-      image: 'https://github.com/rolandoto/image-pms/blob/main/_MG_0188%20(1).jpg?raw=true', // Replace with actual image URL
+      image: 'https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/_MG_0188%20(1).jpg', // Replace with actual image URL
       url: 'https://appartments.com.co/',
     }
   ];
