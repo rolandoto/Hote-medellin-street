@@ -948,7 +948,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
     
     <div
       className="relative h-[910px] bg-cover bg-center"
-      style={{ backgroundImage: 'url("https://raw.githubusercontent.com/rolandoto/image-pms/blob/main/Logos/537507446.jpg?raw=true")' }}
+      style={{ backgroundImage: 'url("https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/537507446.jpg")' }}
     >
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="absolute xl:top-1/4 top-[90px] text-white max-w-lg px-6">
