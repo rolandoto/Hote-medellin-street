@@ -128,14 +128,12 @@ const Checkout  =() =>{
 
     return (<>
        
-        {loadingCart && <LoadingOverlay title={"Cargando..."} />}
-        {loading && <LoadingOverlay title={"Creando reserva..."} />} 
-        <WhatsappButton /> 
-        <HeaderStep currentStep={2} />
-        <Toaster position="bottom-right"  richColors   />  
+            {loadingCart && <LoadingOverlay title={"Cargando..."} />}
+            {loading && <LoadingOverlay title={"Creando reserva..."} />} 
+            <WhatsappButton /> 
+            <HeaderStep currentStep={2} />
+            <Toaster position="bottom-right"  richColors   />  
             {FillContent()}
-
-          
             <Footer />
             </>)
 

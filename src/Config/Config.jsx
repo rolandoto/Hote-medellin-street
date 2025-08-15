@@ -15,5 +15,5 @@ export const CLoubedsRoute ={
 
 export const Environment ={
   propertyID:"315187",
-  Token:"cbat_YRMxVbecaJX7J2seEYS92v6qmUomTgld"
+  Token:"cbat_kx0f4MXpoAh6mD5ekbYoV3mRwAKnRUZB"
 }

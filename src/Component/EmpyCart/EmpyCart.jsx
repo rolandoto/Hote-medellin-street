@@ -2,7 +2,7 @@ import React from "react";
 
 const  EmpyCart =({title}) =>{
 
-    return ( <div className="flex   items-center justify-center ">
+    return ( <div className="flex mt-16  items-center justify-center ">
               <div className=" max-w-6xl p-8  g">
                 <div className="flex justify-center mb-6">
                   <object 

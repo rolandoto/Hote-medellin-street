@@ -45,62 +45,62 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
   };
 
   const PostpostReservation = async ({propertyID,
-                                    token,
-                                    startDate,
-                                    endDate,
-                                    guestFirstName,
-                                    guestLastName,
-                                    guestEmail,
-                                    guestPhone,
-                                    rooms,
-                                    adults,
-                                    children,
-                                    dateCreated,  
-                                    number,
-                                    exp_month,
-                                    exp_year,
-                                    cvc,
-                                    card_holder,
-                                    subtotal,
-                                    promoCode}) => {
-    try {
-        const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/PostpostReservation`, {
-          method: "POST",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify({propertyID,
-                                token,
-                                startDate,
-                                endDate,
-                                guestFirstName,
-                                guestLastName,
-                                guestEmail,
-                                guestPhone,
-                                rooms,
-                                adults,
-                                children,
-                                dateCreated,
-                                number,
-                                exp_month,
-                                exp_year,
-                                cvc,
-                                card_holder,
-                                subtotal,
-                                promoCode})
-        });
-    
-        if (!resp.ok) {
-          throw new Error('Response is not ok');
-        }
-    
-        const {ok} = await resp.json();
-        return ok;
-      } catch (error) {
-       
-        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
-      }
-  };
+    token,
+    startDate,
+    endDate,
+    guestFirstName,
+    guestLastName,
+    guestEmail,
+    guestPhone,
+    rooms,
+    adults,
+    children,
+    dateCreated,  
+    number,
+    exp_month,
+    exp_year,
+    cvc,
+    card_holder,
+    subtotal,
+    promoCode}) => {
+try {
+    const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/PostpostReservation`, {
+    method: "POST",
+    headers: {
+    'Content-type': 'application/json'
+    },
+    body: JSON.stringify({propertyID,
+    token,
+    startDate,
+    endDate,
+    guestFirstName,
+    guestLastName,
+    guestEmail,
+    guestPhone,
+    rooms,
+    adults,
+    children,
+    dateCreated,
+    number,
+    exp_month,
+    exp_year,
+    cvc,
+    card_holder,
+    subtotal,
+    promoCode})
+    });
+
+    if (!resp.ok) {
+    throw new Error('Response is not ok');
+    }
+
+    const {ok} = await resp.json();
+    return ok;
+    } catch (error) {
+
+    throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+    }
+    };
 
   const GetCountry = async () => {
     try {
@@ -264,27 +264,6 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
       }
   };
 
-
-  const getRoomTypes = async ({propertyID,token}) => {
-    try {
-        const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/getRoomTypes`, {
-          method: "POST",
-          headers: {
-            'Content-type': 'application/json'
-          },
-          body: JSON.stringify({propertyID,token})
-        });
-        if (!resp.ok) {
-          throw new Error('Response is not ok');
-        }
-        const data = await resp.json();
-      
-        return data.data;
-      } catch (error) {
-        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
-      }
-  };
-
   export default {
     PostHotelByIdHotel,
     PostCreateReservation,
@@ -296,9 +275,9 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
     PostRoomPromotions,
     GetRoomsPromtions,
     getAvailableRoomTypes,
-    PostpostReservation,
-    getRoomTypes
+    PostpostReservation
   }
 
 
   
+
