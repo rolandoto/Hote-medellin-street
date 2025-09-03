@@ -64,7 +64,7 @@ export default function SubscriptionPopup() {
                     <Heart className="w-16 h-16 text-red-500 fill-current" />
                     </div>
                     <div className="relative z-10 mb-8">
-                    <h1 className="text-[20px] font-bold md:text-[35px] text-red-700 mb-4 leading-tight">
+                    <h1 className="text-[15px] font-bold md:text-[20px] text-red-700 mb-4 leading-tight">
                         Suscríbete y disfruta de un 10% de descuento por reservas directas durante septiembre
                     </h1>
                     <p className="text-red-600 text-lg">
