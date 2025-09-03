@@ -264,6 +264,33 @@ try {
       }
   };
 
+
+ const sendPromotionalEmail = async ({propertyID,Email,Username}) => {
+  try {
+    const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/ResendEmaiHotel`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({propertyID,Email,Username }),
+    });
+
+    if (!resp.ok) {
+      const response = await resp.json();
+      return {
+        ok:false,
+        msg: response.msg || 'Error al registrar cliente.',
+      }
+    }
+
+    const data = await resp.json();
+ 
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
   export default {
     PostHotelByIdHotel,
     PostCreateReservation,
@@ -275,7 +302,8 @@ try {
     PostRoomPromotions,
     GetRoomsPromtions,
     getAvailableRoomTypes,
-    PostpostReservation
+    PostpostReservation,
+    sendPromotionalEmail
   }
 
 

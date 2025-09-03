@@ -1,10 +1,10 @@
 import React from "react"
-import {  IconFaFacebookF, IconFaInstagram, IconFaMapMarkerAlt, IconFaWhatsapp, IconFaYoutube, IconsMdEmail } from "../Icons/Icons"
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import pdf from "../../Image/contracto.pdf"
 import garantia from "../../Image/garantia.pdf"
+import { IoBusinessOutline } from "react-icons/io5";
 
 const FooterHome =({PostHotelByIdHotel}) =>{
 
@@ -16,16 +16,7 @@ const FooterHome =({PostHotelByIdHotel}) =>{
         window.open("https://www.instagram.com/hotel47medellinstreet/", "_blank");
     };
 
-    /**
-     * 
-     * <div className="w-[350px] lg:w-[280px] lg:w-122 " >
-                            <div className="flex justify-center space-x-4 mt-4">
-                                <IconFaInstagram   onclick={handleInstagram} />
-                                <IconFaFacebookF  onclick={handleFacebook} />
-                            </div>
-                    </div>
-     * 
-     */
+   
 
     return (
       <>
@@ -47,6 +38,10 @@ const FooterHome =({PostHotelByIdHotel}) =>{
 
     <div className="mt-5 md:mt-0 md:w-1/2 w-full">
       <h2 className="text-lg font-semibold">Contacto</h2>
+      <div className="flex items-center mt-4">
+        <span><IoBusinessOutline color="white" /></span>
+        <p className="ml-2">Reservas corportativas </p>
+      </div>
       <div className="flex items-center mt-4">
         <span><FaPhoneAlt color="white" /></span>
         <p className="ml-2">+57  301 870 64 34</p>

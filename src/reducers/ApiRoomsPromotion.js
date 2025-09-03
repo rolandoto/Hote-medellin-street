@@ -7,7 +7,11 @@ export const initialState ={
 
     RoomsGetPromotions:[],
     loadingGetRoomsProtions:false,
-    errorGetRoomsProtions:null
+    errorGetRoomsProtions:null,
+
+    RoomEmail:[],
+    loadingRooEmail:false,
+    errorRoomEmail:false
 }
 export const ApiRoomsPromotionReducers = createSlice({
     name:"RoomPromotion",
@@ -39,6 +43,20 @@ export const ApiRoomsPromotionReducers = createSlice({
             state.RoomsGetPromotions =action.payload
             state.loadingGetRoomsProtions= false
         },
+
+
+        loadingRoomsEmail:(state) =>{
+            state.loadingRooEmail=true
+            state.errorRoomEmail= null
+        },
+        setErrorRoomEmail:(state) =>{
+            state.loadingRooEmail = true
+            state.errorRoomEmail = false
+        },
+        setRoomEmail:(state,action) =>{
+            state.RoomEmail =action.payload
+            state.loadingRooEmail= false
+        },
     }
 })
 
@@ -48,7 +66,11 @@ export const {  loadingRoomsPromtions,
 
                 loadingGetRoomsPromtions,
                 setErrorGetRoomsPromtions,
-                setRoomsGetPromtions
+                setRoomsGetPromtions,
+
+                loadingRoomsEmail,
+                setErrorRoomEmail,
+                setRoomEmail
                 
             } = ApiRoomsPromotionReducers.actions
 

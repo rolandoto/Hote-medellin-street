@@ -22,6 +22,8 @@ import { PiCallBellFill } from "react-icons/pi";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
 import FooterHome from "../../Component/Footer/FooterHome";
+import CalenderSearchHome from "../../Component/CalenderSearch/CalenderSearchHome";
+import SubscriptionPopup from "../../Component/SubscriptionPopup/SubscriptionPopup";
 
 
 function RegistroModal({ isOpen, onClose }) {
@@ -163,7 +165,7 @@ function Counter({ targetNumber, label }) {
   }, [isVisible, count, targetNumber]);
 
   return (
-    <div ref={ref} className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 z-50 hover:text-white hover:bg-[#002f6c] text-[#002f6c]">
+    <div ref={ref} className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 z-10 hover:text-white hover:bg-[black] text-[black]">
       <p className="text-4xl md:text-6xl">{count}</p>
       <p className="text-xs md:text-sm">{label}</p>
     </div>
@@ -429,32 +431,13 @@ const subtotal = getCartSubtotal()
   // Add more slides as needed
 ];
 
-const [currentSlide, setCurrentSlide] = useState(0);
-const [fade, setFade] = useState(true); // Estado para manejar la opacidad
 
-const handlePrev = () => {
-  setFade(false); // Inicia el efecto de desvanecimiento
-  setTimeout(() => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
-    setFade(true); // Restaura la opacidad después de cambiar el slide
-  }, 500); // Espera 500ms antes de cambiar el slide para completar el fade-out
-};
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-const handleNext = () => {
-  setFade(false); // Inicia el efecto de desvanecimiento
-  setTimeout(() => {
-    setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
-    setFade(true); // Restaura la opacidad después de cambiar el slide
-  }, 500); // Espera 500ms antes de cambiar el slide para completar el fade-out
-};
- const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
-
-
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // función para avanzar
   const nextSlide = () => {
@@ -463,14 +446,12 @@ const [currentIndex, setCurrentIndex] = useState(0);
     }
   };
 
-  // función para retroceder
+
   const prevSlide = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prevIndex) => prevIndex - 1);
     }
   };
-
-  
 
   const hotelReferid = [
     {
@@ -490,7 +471,6 @@ const [currentIndex, setCurrentIndex] = useState(0);
       url: 'https://appartments.com.co/',
     }
   ];
-
   
   const features = [
     {
@@ -501,10 +481,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
       title: "Parqueadero privado",
       image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/parkingf.jpg",
     },
-    {
-      title: "Centro de negocios",
-      image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/negociosf.jpg",
-    },
+   
     {
       title: "Recepción 24 horas",
       image: "https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/recepcionf.jpg",
@@ -513,66 +490,34 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
   const [isExpanded, setIsExpanded] = useState(false);
 
-
     return (
         <div>
           {FillContent}
-           <div
-      className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/537507446.jpg')" }} // Asegúrate de que la imagen esté en la carpeta `public`
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-60"></div>
-
-      {/* Main Content */}
-      <div className="relative m-auto max-w-7xl z-10 flex flex-col items-start justify-start  md:justify-center  h-full text-white px-4 text-center">
-  <p className="text-sm text-left  md:text-base lg:text-lg  font-bold uppercase mb-2">
-    El hotel ideal para viajes de negocios en Medellín
-  </p>
-  <h1 className="text-[50px] sm:text-[70px] md:text-[80px] text-left lg:text-[90px] mb-8">
-    Hotel 47 Street Medellín
-  </h1>
-</div>
-
-      <div className="absolute md:p-0  pr-10  pl-10   max-w-7xl mx-auto bottom-0 left-0 right-0 flex flex-col md:flex-row">
-      <div  onClick={scrollToRoomSectionEvent} className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
-        <i className="text-4xl mb-4">
-          <BsTagFill fontSize={40} />
-        </i>
-        <p className="text-center text-base md:text-lg font-medium">
-          Programa Viajero Frecuente
-        </p>
-      </div>
-      <div  onClick={scrollToRoomSection} className="flex-1 flex flex-col items-center justify-center p-5 md:p-5 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
-        <i className="text-4xl ">
-          <FaUserTie fontSize={40} />
-        </i>
-        <p className="text-center text-base md:text-[16px] font-medium">
-          Centro de Negocios
-        </p>
-      </div>
-      <div  onClick={scrollToRoomSection} className="flex-1 flex flex-col items-center justify-center p-5 md:p-5 cursor-pointer z-50 hover:bg-[#002f6c] bg-gray-800 text-white  md:mb-0">
-        <i className="text-4xl ">
-          <FaParking fontSize={40} />
-        </i>
-        <p className="text-center text-base md:text-[16px] font-medium">
-          Parqueadero
-        </p>
-      </div>
-      <div
-        onClick={PostHotelByIdHotel}
-        className="flex-1 flex flex-col items-center justify-center p-5 md:p-10 cursor-pointer z-50 bg-[#002f6c] text-white"
-      >
-        <i className="text-4xl mb-4">
-          <PiCallBellFill fontSize={40} />
-        </i>
-        <p className="text-center text-base md:text-[16px] font-medium">Reservar</p>
-      </div>
+          <SubscriptionPopup />
+            <div
+            className="relative  h-[500px] bg-cover bg-center"
+            style={{ backgroundImage: "url('https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/537507446.jpg')" }} >
+          
+            <div className="absolute inset-0 bg-black opacity-60"></div>
+              <div className="relative lg:p-4 p-4 text-center max-w-5xl m-auto z-10 flex flex-col items-initial justify-center h-[460px]  text-white">
+                  <p className="text-sm text-left  md:text-base lg:text-lg  font-bold uppercase mb-2">
+                    El hotel ideal para viajes de negocios en Medellín
+                  </p>
+                  <h1 className="text-[50px] sm:text-[70px] md:text-[80px] text-left lg:text-[90px] mb-8">
+                    Hotel 47 Street Medellín
+                  </h1>
+              </div>
     </div>
-    </div>
-             
 
-         
+          {subtotal >0 &&<Cart    /> } 
+            <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 
+                                 formattedStartDateToString={formattedStartDateToString}
+                                 formattedEndDateToString={formattedEndDateToString}
+                                  HandClickMenuEnd={HandClickMenuEnd}
+                                  HandClickMenu={HandClickMenu}
+                                  onsubmit={PostHotelByIdHotel}
+                                  totalCountAdults={totalCountAdults}/>
+
           <div className="hidden lg:block  ">
               {contextMenuPosition && (
                 <DateRange
@@ -580,7 +525,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                   rangeColors={["rgb(255 104 0 / 36%);"]}
                   minDate={new Date()}
                   onChange={handleSelect}
-                  editableDateInputs={true}
+                  editableDateInputs={false}
                   months={2}
                   dayContentRenderer={(date) => {
                     const className = getClassNameForDate(date);
@@ -595,7 +540,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                   moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
                   showSelectionPreview={false} // Muestra la selección previa
                   startDatePlaceholder="Early"
-                  showDateDisplay={true}
+                  showDateDisplay={false}
                   ranges={state}
                   direction="horizontal"
                   locale={esLocale}
@@ -613,7 +558,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                           rangeColors={["rgb(255 104 0 / 36%);"]}
                           minDate={new Date()}
                           onChange={handleSelect}
-                          editableDateInputs={true}
+                          editableDateInputs={false}
                           months={monthsToShow}
                           dayContentRenderer={(date) => {
                             const className = getClassNameForDate(date);
@@ -628,7 +573,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                           moveRangeOnFirstSelection={false} // No mueve el rango en la primera selección
                           showSelectionPreview={false} // Muestra la selección previa
                           startDatePlaceholder="Early"
-                          showDateDisplay={true}
+                          showDateDisplay={false}
                           ranges={state}
                           direction="horizontal"
                           locale={esLocale}
@@ -636,7 +581,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                      
                     </div>
                     <button
-                      className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black"
+                      className="mt-6 bg-[black] text-white px-6 py-3 rounded-lg hover:bg-green-400"
                       onClick={(e) => setContextMenuPosition(false) }
                       style={{
                         position: 'absolute',
@@ -670,7 +615,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
               <div className="hidden lg:block  ">
                 {contextShowMenuPeople && 
                   <Search contextShowMenuPeople={contextShowMenuPeople}
-                  top={715}
+                  top={575}
                   adults={adults}
                   childrem={childrem}
                   handChangeAdults={handChangeAdults}
@@ -680,6 +625,8 @@ const [currentIndex, setCurrentIndex] = useState(0);
                   setContextShowMenuPeople={setContextShowMenuPeople}  />}
               </div>
              
+
+         
               <div className="flex flex-col  m-auto max-w-7xl md:flex-row items-center justify-center p-8 bg-white">
                  
                   <div className="w-full md:w-1/2 flex justify-start ">
@@ -688,10 +635,8 @@ const [currentIndex, setCurrentIndex] = useState(0);
                       className="w-2/2 h-[650px] rounded-lg shadow-lg"
                     />
                   </div>
-
-                 
                   <div className="w-full text-center mt-5  pl-0 md:pl-12">
-                    <h2 className="md:text-center  md:text-[35px]  text-justify  leading-tight  text-[20px] text-[#002f6c] ">
+                    <h2 className="md:text-center  md:text-[35px]  text-justify  leading-tight  text-[20px] text-[black] ">
                     El hotel 47 Street en Medellín, cuenta con servicios especiales para viajeros corporativos
                     </h2>
                     <div className=" m-auto max-w-4xl  md:mt-16 mt-0" >
@@ -702,8 +647,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
                           Cómodas habitaciones,parqueadero privado, internet, lavandería* y un excelente servicio nos convierte en su mejor opción para su próximo viaje corporativo.
                         </p>
                     </div>
-                 
-                    {/* Stats Section */}
+
                     <div className="max-w-7xl mt-9 mx-auto flex flex-wrap md:flex-nowrap bottom-4 left-0 right-0 cursor-pointer">
                     <Counter targetNumber={24} label="HABITACIONES CLÁSICAS" />
                     <Counter targetNumber={18} label="HABITACIONES SUPERIOR" />
@@ -716,7 +660,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
    
                 <header className=" max-w-7xl m-auto mb-8 text-start">
                   <p className="font-bold text-[#333333]">Hoteles en el centro de Medellín</p>
-                  <h1 className="text-[40px] md:text-[80px]  text-blue-900">47 Street</h1>
+                  <h1 className="text-[40px] md:text-[80px]  text-black">47 Street</h1>
                 </header>
 
                 <section className="flex max-w-7xl m-auto flex-col md:flex-row justify-center items-center gap-8">
@@ -738,18 +682,18 @@ const [currentIndex, setCurrentIndex] = useState(0);
               </div>
               <div className="p-4 text-center">
 
-                <h2 className="text-blue-900 text-[20px]  sm:text-[20px] md:text-[20px] font-bold ">{item.title}</h2>
+                <h2 className="text-black text-[20px]  sm:text-[20px] md:text-[20px] font-bold ">{item.title}</h2>
                 <p
                   className="text-gray-600 mt-4 text-justify  "
                   dangerouslySetInnerHTML={{ __html: item.roomTypeDescription }}
                 ></p>
 
 
-                <p className="text-blue-900 font-bold ">
+                <p className="text-black font-bold ">
                   ${(item.price).toLocaleString('es-CO')} COP (IVA incluido)
                 </p>
 
-                <button onClick={PostHotelByIdHotel} className=" m-auto mt-8 w-full px-8 py-4 bg-[#002f6c] text-white hover:bg-[#002f6c] transition-colors">
+                <button onClick={PostHotelByIdHotel} className=" m-auto mt-8 w-full px-8 py-4 bg-[black] text-white hover:bg-[black] transition-colors">
                   Reservar
                 </button>
               </div>
@@ -768,7 +712,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
     <div ref={roomSectionRef} >
       <section className="max-w-full m-auto  ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
           {features.map((feature, index) => (
             <div key={index} className="relative group">
               <img
@@ -792,12 +736,11 @@ const [currentIndex, setCurrentIndex] = useState(0);
         
           <div className="space-y-2">
             <p className="text-sm uppercase text-gray-600">SOLO BENEFICIOS</p>
-            <h1 className="text-4xl md:text-5xl  text-blue-900">
+            <h1 className="text-4xl md:text-5xl  text-black">
               Programa para viajeros frecuentes
             </h1>
           </div>
 
-          {/* Benefits Card */}
           <div className="rounded-lg  p-6 space-y-6">
           <button 
               onClick={() => setIsExpanded(!isExpanded)}
@@ -845,7 +788,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
             </p>
             </>)}
           </div>
-          {/* Expandable Section */}
+      
           <div className="space-y-4">
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
@@ -882,10 +825,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
             </button>
           </div>
         </div>
-
-
         <RegistroModal isOpen={isModalOpen} onClose={closeModal} />
-
         <div className="relative h-[600px]  overflow-hidden">
           <img 
             src="https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/untitled%20folder/47street-t.jpg"
@@ -895,9 +835,8 @@ const [currentIndex, setCurrentIndex] = useState(0);
         </div>
       </div>
     </div>
-
     <div className="max-w-7xl mx-auto py-8">
-        <h2 className=" md:text-[30px] text-[25px] text-center text-blue-900  font-lora  mb-6">Nos encantaría mejorar. ¡Compártenos su experiencia!</h2>
+        <h2 className=" md:text-[30px] text-[25px] text-center text-black-900  font-lora  mb-6">Nos encantaría mejorar. ¡Compártenos su experiencia!</h2>
               <div className="block " >
                     <div className="flex items-center justify-center ">
                       <div className="max-w-sm p-6">

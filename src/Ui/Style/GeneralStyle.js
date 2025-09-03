@@ -139,7 +139,7 @@ width: 100%;
 box-shadow: 17px 20px 40px rgba(0, 0, 0, .21) ;
 justify-content: space-between;
 align-items: center;
-border-radius:10px;
+border-radius:30px;
 background: white;
 @media(min-width: 1024) {
   dispaly: block;
