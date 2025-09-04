@@ -883,6 +883,18 @@ const subtotal = getCartSubtotal()
     
     </div>
     
+    <div className="relative flex justify-center items-center p-4">
+  <div className="map-container w-[90%] md:w-[70%] h-[250px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+    <iframe
+      title="Google Map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15906.971964172734!2d-75.6486966!3d6.2457143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442856f7c6f815%3A0xc0a594c5b655361!2sCl.%2047%20%2345-47%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1698617462304!5m2!1ses!2sco"
+      className="w-full h-full border-0"
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
 
     
     <div

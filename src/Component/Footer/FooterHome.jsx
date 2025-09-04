@@ -64,20 +64,7 @@ const FooterHome =({PostHotelByIdHotel}) =>{
       </div>
     </div>
 
-      <div className="md:absolute flex  bottom-0   right-[130px] w-40 h-[100px] md:w-60 md:h-60">
-        <div className="map-container" style={{ width: "100%", height: "100%" }}>
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15906.971964172734!2d-75.6486966!3d6.2457143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442856f7c6f815%3A0xc0a594c5b655361!2sCl.%2047%20%2345-47%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1698617462304!5m2!1ses!2sco"
-            width="120%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
+     
     </div>
       <footer className=" m-auto max-w-7xl justify-between bottom-0 md:flex block  right-0 left-0  absolute text-center text-white py-4">
         <p>© Copyright. Todos los derechos reservados.</p>
