@@ -51,10 +51,8 @@ const useRoomsPromotions =() =>{
         }
     }
 
-
     const PostRoomEmail =async({propertyID,Email,Username}) =>{
         dispatch(loadingRoomsEmail())
-     
             try {
                     const response  = await HttpClient.sendPromotionalEmail({propertyID,Email,Username})
                     
@@ -70,7 +68,6 @@ const useRoomsPromotions =() =>{
                         dispatch(setErrorRoomEmail("no found")) 
                         toast.error("Error en el sistema")
             }
-
     }
 
     return {

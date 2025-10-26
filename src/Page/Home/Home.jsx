@@ -507,7 +507,7 @@ const subtotal = getCartSubtotal()
                     Hotel 47 Street Medellín
                   </h1>
               </div>
-    </div>
+          </div>
 
           {subtotal >0 &&<Cart    /> } 
             <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 

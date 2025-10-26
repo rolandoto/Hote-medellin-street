@@ -1,4 +1,3 @@
-import React from "react"
 import {Button} from "@nextui-org/react";
 import pdf from "../../Image/contracto.pdf"
 import { ShieldCheck } from "lucide-react";
@@ -59,14 +58,10 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                     </div>
                 <div>
                     </div>
-                    
-                    
                     <div className=" mx-auto  rounded-md ">
                         <div className="mb-4 mt-5">
                         <h2 className="text-xl font-semibold">Método de Pago</h2>
-                       
                         </div>
-                    
                             <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" >
                                 Titular de la tarjeta (obligatorio)
@@ -137,11 +132,9 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                                     </option>
                                     );
                                 })}
-
                                 </select>
                                 {formErrors.expiryYear && <p className="text-red-500 text-xs">{formErrors.expiryYear}</p>}
                             </div>
-
                             <div className="w-1/3">
                                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="cvc">
                                 CVC
@@ -204,7 +197,6 @@ const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Coun
                                     <a target="_blank" href="https://wompi.com/assets/downloadble/autorizacion-administracion-datos-personales.pdf" className="hover:underline">Autorización de datos personales</a>
                                     <a target="_blank" href="https://wompi.com/assets/downloadble/reglamento-Usuarios-Colombia.pdf"   className="hover:underline">Políticas de pagos</a>
                                 </div>
-
                                 </div>
                         </div>
                     </form>)
