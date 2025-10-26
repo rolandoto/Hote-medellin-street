@@ -4,7 +4,7 @@ export const config = {
 }
 
 export const SocketRoute = {
-   serverRoute: "https://railway.grupo-hoteles.com"
+   serverRoute: "https://railway.grupo-hoteles.com
    //serverRoute: "http://localhost:3001"
 }
 
