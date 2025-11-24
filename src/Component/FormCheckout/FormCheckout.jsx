@@ -15,7 +15,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
       await getListHotel()
       await getListBanks()
     }
-  
+
     useEffect(() =>{
       fetchDate()
     },[])

@@ -35,7 +35,6 @@ const Checkout  =() =>{
     const cardNumberString = cardNumberArray.join("");
     const now = moment().format('YYYY-MM-DD HH:mm:ss');
 
-    console.log(formValuesPse)
     const validate = useValidation();
     const validatePse = useValidationPse();
     const [paymentMethod, setPaymentMethod] = useState('PSE');

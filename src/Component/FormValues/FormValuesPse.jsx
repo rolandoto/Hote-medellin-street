@@ -3,8 +3,6 @@ import pdf from "../../Image/contracto.pdf"
 
 const FormValuesPse =({handleSubmit,formErrors,handleChange,formValues,loading,banks})  =>{
 
-    console.log(formErrors)
-
     return (<form onSubmit={handleSubmit}>
 
                  <div>
@@ -16,7 +14,7 @@ const FormValuesPse =({handleSubmit,formErrors,handleChange,formValues,loading,b
                     value={formValues.banks}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-700 bg-white">
-                        {banks.map((bank) => (
+                        {banks?.map((bank) => (
                         <option key={bank.bankCode} value={bank.bankCode}>
                             {bank.bankName}
                         </option>
