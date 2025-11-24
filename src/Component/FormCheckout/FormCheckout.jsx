@@ -66,8 +66,7 @@ const FormCheckout=({Country,handleSubmit,loading,formErrors,handleChange,formVa
                         <div className="flex gap-2">
                             <span className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-md">AE</span>
                             <span className="bg-blue-900 text-yellow-400 text-xs font-bold px-2 py-1 rounded-md">VISA</span>
-                            <span className="bg-blue-900 text-white text-xs font-bold px-2 py-1 rounded-md">DC</span>
-                            <span className="bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-md">MC</span>
+                          
                         </div>
                         </label>
                             <label
