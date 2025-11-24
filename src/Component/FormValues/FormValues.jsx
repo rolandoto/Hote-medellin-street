@@ -2,7 +2,7 @@ import {Button} from "@nextui-org/react";
 import pdf from "../../Image/contracto.pdf"
 import { ShieldCheck } from "lucide-react";
 
-const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading,Country})  =>{
+const FormValues =({handleSubmit,formErrors,handleChange,formValues,loading})  =>{
 
     return (<form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -15,15 +15,10 @@ import Cart from "../../Component/Cart/Cart";
 import UseHotelActions from "../../Actions/useHotelsActions";
 import { useSelector } from "react-redux";
 import WhatsappButton from "../../Component/WhatsappButton/WhatsappButton";
-import { BsTagFill } from "react-icons/bs";
-import { FaUserTie } from "react-icons/fa6";
-import { FaParking } from "react-icons/fa";
-import { PiCallBellFill } from "react-icons/pi";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
 import FooterHome from "../../Component/Footer/FooterHome";
 import CalenderSearchHome from "../../Component/CalenderSearch/CalenderSearchHome";
-import SubscriptionPopup from "../../Component/SubscriptionPopup/SubscriptionPopup";
 
 
 function RegistroModal({ isOpen, onClose }) {
@@ -50,15 +45,11 @@ function RegistroModal({ isOpen, onClose }) {
 
   const handleSubmit = (e) => {
       e.preventDefault();
-
-      // Validación para asegurarse de que el teléfono solo tenga números y no esté vacío
       if (!/^\d+$/.test(formData.telefono)) {
           setErrors({ ...errors, telefono: "El número de teléfono debe contener solo dígitos" });
           return;
       }
-
-      console.log('Datos enviados:', formData);
-      onClose(); // Cierra el modal después del envío
+      onClose(); 
   };
 
   if (!isOpen) return null;
@@ -172,14 +163,11 @@ function Counter({ targetNumber, label }) {
   );
 }
 
-
-
 const Home =() =>{
   const navigate = useNavigate();
   moment.locale('es');
   
   useEffect(() => {
-    // Scrolls to the top of the document on component mount
     window.scrollTo(0, 0);
 }, []);
 
@@ -204,49 +192,27 @@ const Home =() =>{
 	
 	
 
-const subtotal = getCartSubtotal()
+  const subtotal = getCartSubtotal()
 
- 
-  /*const features = [
-      { icon: <IconsFaGlassMartini/>, title: 'Cóctel de bienvenida' },
-      { icon: <IconsGiForkKnifeSpoon/>, title: 'Desayuno incluido' },
-      { icon: <IconsFaConciergeBell/>, title: 'Recepción 24 horas' },
-      { icon: <IconsaCar/>, title: 'Variedad de transporte', description: 'Metro, tranvía, autobús, taxi' },
-      { icon: <IconsRiBankFill/>, title: 'Vida cultural y nocturna', description: 'Bares, museos, restaurantes' },
-      { icon: <IconsFaSquareParking/>, title: 'Parqueadero gratis*', description: 'Sujeto a disponibilidad' },
-      { icon: <IconsGiForkKnifeSpoon/>, title: 'Restaurante - Bar  ', description: ' con vista panorámica' },
-      { icon: <IconsFaStore/>, title: 'Alianzas comerciales', description: 'Servicio de taxi, gimnasio, tours, médico, comunicaciones.' },
-      { icon: <IconsFaBanSmoking/>, title: 'Espacios libre de humo', description: "" },
-    ];*/
 
-      const roomSectionRef = useRef(null);
-      const roomEventsSectionRef = useRef(null);
+  const roomSectionRef = useRef(null);
+  const roomEventsSectionRef = useRef(null);
 
-      const scrollToRoomSection = () => {
-        if (roomSectionRef.current) {
-            roomSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
   
 
-    const scrollToRoomSectionEvent = () => {
-      if (roomEventsSectionRef.current) {
-          roomEventsSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
 
-      const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
-      const {handleSelect,state,
-            setContextMenuPosition,
-            contextMenuPosition,
-            handChangeAdults,
-            handChangeChildrem,
-            handDecreaseAdults,
-            handDecreaseChildren,
-            totalCountAdults,
-            adults,
-            childrem ,
-            getClassNameForDate } =  UseCalenderSearch()
+  const [contextShowMenuPeople, setContextShowMenuPeople] = useState(false);
+  const {handleSelect,state,
+        setContextMenuPosition,
+        contextMenuPosition,
+        handChangeAdults,
+        handChangeChildrem,
+        handDecreaseAdults,
+        handDecreaseChildren,
+        totalCountAdults,
+        adults,
+        childrem ,
+        getClassNameForDate } =  UseCalenderSearch()
         
       
     const formattedStartDateToString = moment(state?.[0]?.startDate ?? '').format('DD MMM YYYY').toLowerCase();
@@ -312,125 +278,6 @@ const subtotal = getCartSubtotal()
 
     const monthsToShow = window.innerWidth >= 700 ? 2 : 1; // Cambia 768 según tu punto de ruptura deseado
 
-/**
- * 
- *    <div className="max-w-7xl mx-auto py-8">
-              <h2 className="text-[30px] text-center text-orange-500  font-lora  mb-6">Lo que opinan nuestros clientes</h2>
-              <div className="block md:flex" >
-                    <div className="flex items-center justify-center ">
-                      <div className="max-w-sm p-6">
-                        <div className="flex items-center">
-                          <img
-                            className="w-12 h-12 rounded-full"
-                            src="https://github.com/rolandoto/image-pms/blob/main/2020-06-27.jpg?raw=true"
-                            alt="Hotel"
-                          />
-                          <div className="ml-4">
-                            <h2 className="text-lg font-semibold">Gallery Hotel Medellín</h2>
-                            <div className="flex items-center">
-                              <span className="text-orange-500 text-lg font-bold">4.0</span>
-                              <div className="flex ml-1">
-                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
-                                </svg>
-                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
-                                </svg>
-                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
-                                </svg>
-                                <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
-                                </svg>
-                                <svg className="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
-                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
-                                </svg>
-                              </div>
-                            </div>
-                            <p className="text-sm text-gray-600">Basado en 600 reseñas.</p>
-                            <p className="text-sm text-gray-500 mt-2">powered by <span className="text-gray-700 font-semibold">Google</span></p>
-                          </div>
-                        </div>
-                        <a target="_blank" href="https://www.google.com/search?hl=en-CO&gl=co&q=Gallery+Hotel+Medell%C3%ADn,+Cl.+47+%2341-55,+La+Candelaria,+Medell%C3%ADn,+La+Candelaria,+Medell%C3%ADn,+Antioquia&ludocid=13557792269951917256&lsig=AB86z5Xi3QsXtAp5vxVbKW_n47sq#lrd=0x8e4428575a0dc0d1:0xbc26f43cbd055cc8,3" className="mt-4 w-full py-2 bg-blue-600 text-white rounded-lg flex items-center justify-center">
-
-                          valóranos en <span className="ml-1 font-semibold"><svg viewBox="0 0 512 512" height="18" width="18"><g fill="none" fill-rule="evenodd"><path d="M482.56 261.36c0-16.73-1.5-32.83-4.29-48.27H256v91.29h127.01c-5.47 29.5-22.1 54.49-47.09 71.23v59.21h76.27c44.63-41.09 70.37-101.59 70.37-173.46z" fill="#4285f4"></path><path d="M256 492c63.72 0 117.14-21.13 156.19-57.18l-76.27-59.21c-21.13 14.16-48.17 22.53-79.92 22.53-61.47 0-113.49-41.51-132.05-97.3H45.1v61.15c38.83 77.13 118.64 130.01 210.9 130.01z" fill="#34a853"></path><path d="M123.95 300.84c-4.72-14.16-7.4-29.29-7.4-44.84s2.68-30.68 7.4-44.84V150.01H45.1C29.12 181.87 20 217.92 20 256c0 38.08 9.12 74.13 25.1 105.99l78.85-61.15z" fill="#fbbc05"></path><path d="M256 113.86c34.65 0 65.76 11.91 90.22 35.29l67.69-67.69C373.03 43.39 319.61 20 256 20c-92.25 0-172.07 52.89-210.9 130.01l78.85 61.15c18.56-55.78 70.59-97.3 132.05-97.3z" fill="#ea4335"></path><path d="M20 20h472v472H20V20z"></path></g></svg></span>
-                        </a>
-                      </div>
-                            </div>
-              <div className="flex overflow-x-scroll space-x-4">
-                {reviews.map((review) => (
-                  <div key={review.id} className="min-w-[250px] max-w-[250px] p-4 bg-white shadow rounded-lg">
-                    <div className="flex items-center space-x-2 mb-4">
-                      <img src={review.avatar} alt={review.name} className="w-10 h-10 rounded-full" />
-                      <div>
-                        <h3 className="font-semibold">{review.name}</h3>
-                        <p className="text-sm text-gray-500">{review.date}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center mb-2">
-                      {[...Array(5)].map((star, index) => (
-                        
-                        <svg className={`w-5 h-5  ${index < review.rating ?" text-orange-500" :"text-gray-300"} `} fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.374 4.223a1 1 0 00.95.69h4.455c.969 0 1.371 1.24.588 1.81l-3.6 2.61a1 1 0 00-.364 1.118l1.374 4.223c.3.921-.755 1.688-1.54 1.118l-3.6-2.61a1 1 0 00-1.176 0l-3.6 2.61c-.784.57-1.838-.197-1.54-1.118l1.374-4.223a1 1 0 00-.364-1.118l-3.6-2.61c-.783-.57-.381-1.81.588-1.81h4.455a1 1 0 00.95-.69l1.374-4.223z" />
-                      </svg>
-                       
-                      ))}
-                    </div>
-                    <p className="text-gray-700">{review.text}</p>
-                  </div>
-                ))}
-              </div>
-
-
-            </div>
-          </div>
- *  <div className="relative bg-cover bg-center h-[650px]" style={{ 
-                    backgroundImage: `url(https://grupo-hoteles.com/storage/app/2/page/1205002298-2-page-slider-1-habitacion-deluxe-centro-de-medellin-antioquia-colombia.webp)`,}}>
-                <div className="absolute inset-0 bg-black opacity-15"></div>
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-                    <h1 className="text-4xl md:text-6xl lg:text-6xl font-lora">
-                      {loadingHotel ?"cargando " :hotel?.nombre}  
-                    </h1>
-                    <p className="mt-2 text-base md:text-xl lg:text-3xl font-lora font-normal">
-                        Más que un hotel, una experiencia artística
-                    </p>
-                    <button className="mt-6 bg-black text-white px-6 py-3 rounded-lg hover:bg-black" onClick={scrollToRoomSection}>
-                        Ver habitaciones
-                    </button>
-                </div>
-            </div>
-
-               <CalenderSearchHome HandClickMenuPeople={HandClickMenuPeople} 
-                                 formattedStartDateToString={formattedStartDateToString}
-                                 formattedEndDateToString={formattedEndDateToString}
-                                  HandClickMenuEnd={HandClickMenuEnd}
-                                  HandClickMenu={HandClickMenu}
-                                  onsubmit={PostHotelByIdHotel}
-                                  totalCountAdults={totalCountAdults}/>
- <Header  scrollToRoomSectionEvent={scrollToRoomSectionEvent}   />
-
- */
-
-
- const slides = [
-  {
-    title: 'Viaje en familia',
-    description: "Nuestro hotel en el corazón de Medellín te ofrece pequeños apartamentos ideales para familias, equipados con cocina, nevera y todas las comodidades que necesitas para sentirte como en casa. Vive una experiencia inolvidable mientras exploras la ciudad, con el espacio y confort perfectos para tu estancia. ¡Tu hogar lejos de casa te espera!    ",
-    image: 'https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp',
-  },
-  {
-    title: 'Turismo Médico',
-    description: 'Si vienes a Medellín por motivos de turismo médico, nuestro hotel es la elección ideal. Estamos cerca de las principales clínicas y centros de salud de la ciudad, y te ofrecemos un ambiente tranquilo y cómodo para tu recuperación.   Además, nuestras instalaciones están diseñadas para proporcionar el descanso y la atención que necesitas durante tu proceso de recuperación    ',
-    image: 'https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp',
-  },
-  {
-    title: 'Viajes de larga duración    ',
-    description: 'Si planeas una estancia prolongada, nuestro hotel te ofrece todo lo que necesitas para sentirte como en casa. Con instalaciones diseñadas para hacer tu vida más cómoda, una ubicación ideal para explorar la ciudad, y servicios que cubren todas tus necesidades, seremos tu hogar lejos de casa durante todo el tiempo que necesites.    ',
-    image: 'https://raw.githubusercontent.com/rolandoto/image-pms/main/1155970062-4-page-slider-1-Habitacion-todos-jacuzzi-ventilador-centro-de-medellin-antioquia-colombia.webp',
-  },
-  // Add more slides as needed
-];
-
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -445,7 +292,6 @@ const subtotal = getCartSubtotal()
       setCurrentIndex((prevIndex) => prevIndex + 1);
     }
   };
-
 
   const prevSlide = () => {
     if (currentIndex > 0) {
@@ -493,7 +339,6 @@ const subtotal = getCartSubtotal()
     return (
         <div>
           {FillContent}
-          <SubscriptionPopup />
             <div
             className="relative  h-[500px] bg-cover bg-center"
             style={{ backgroundImage: "url('https://raw.githubusercontent.com/rolandoto/image-pms/refs/heads/main/Logos/537507446.jpg')" }} >
@@ -881,20 +726,20 @@ const subtotal = getCartSubtotal()
     
                             </div>
     
-    </div>
+            </div>
     
-    <div className="relative flex justify-center items-center p-4">
-  <div className="map-container w-[90%] md:w-[70%] h-[250px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
-    <iframe
-      title="Google Map"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15906.971964172734!2d-75.6486966!3d6.2457143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442856f7c6f815%3A0xc0a594c5b655361!2sCl.%2047%20%2345-47%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1698617462304!5m2!1ses!2sco"
-      className="w-full h-full border-0"
-      allowFullScreen=""
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</div>
+          <div className="relative flex justify-center items-center p-4">
+        <div className="map-container w-[90%] md:w-[70%] h-[250px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            title="Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15906.971964172734!2d-75.6486966!3d6.2457143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442856f7c6f815%3A0xc0a594c5b655361!2sCl.%2047%20%2345-47%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20La%20Candelaria%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1698617462304!5m2!1ses!2sco"
+            className="w-full h-full border-0"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
 
     
     <div

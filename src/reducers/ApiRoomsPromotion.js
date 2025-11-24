@@ -30,7 +30,6 @@ export const ApiRoomsPromotionReducers = createSlice({
             state.loadingGetRoomsProtions= false
         },
 
-
         loadingGetRoomsPromtions:(state) =>{
             state.loadingGetRoomsProtions=true
             state.errorGetRoomsProtions= null

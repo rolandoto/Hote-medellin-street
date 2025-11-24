@@ -45,61 +45,112 @@ const PostHotelByIdHotel = async ({id,desde,hasta,counPeople}) => {
   };
 
   const PostpostReservation = async ({propertyID,
-    token,
-    startDate,
-    endDate,
-    guestFirstName,
-    guestLastName,
-    guestEmail,
-    guestPhone,
-    rooms,
-    adults,
-    children,
-    dateCreated,  
-    number,
-    exp_month,
-    exp_year,
-    cvc,
-    card_holder,
-    subtotal,
-    promoCode}) => {
-try {
-    const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/TestEpaycopse`, {
-    method: "POST",
-    headers: {
-    'Content-type': 'application/json'
-    },
-    body: JSON.stringify({propertyID,
-    token,
-    startDate,
-    endDate,
-    guestFirstName,
-    guestLastName,
-    guestEmail,
-    guestPhone,
-    rooms,
-    adults,
-    children,
-    dateCreated,
-    number,
-    exp_month,
-    exp_year,
-    cvc,
-    card_holder,
-    subtotal,
-    promoCode})
-    });
+                                  token,
+                                  startDate,
+                                  endDate,
+                                  guestFirstName,
+                                  guestLastName,
+                                  guestEmail,
+                                  guestPhone,
+                                  rooms,
+                                  adults,
+                                  children,
+                                  dateCreated,  
+                                  number,
+                                  exp_month,
+                                  exp_year,
+                                  cvc,
+                                  card_holder,
+                                  subtotal,
+                                  promoCode}) => {
+                              try {
+                                  const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/TestEpaycopse`, {
+                                  method: "POST",
+                                  headers: {
+                                  'Content-type': 'application/json'
+                                  },
+                                  body: JSON.stringify({propertyID,
+                                  token,
+                                  startDate,
+                                  endDate,
+                                  guestFirstName,
+                                  guestLastName,
+                                  guestEmail,
+                                  guestPhone,
+                                  rooms,
+                                  adults,
+                                  children,
+                                  dateCreated,
+                                  number,
+                                  exp_month,
+                                  exp_year,
+                                  cvc,
+                                  card_holder,
+                                  subtotal,
+                                  promoCode})
+                                  });
 
     if (!resp.ok) {
-    throw new Error('Response is not ok');
-    }
+        throw new Error('Response is not ok');
+        }
 
-    const {ok} = await resp.json();
-    return ok;
-    } catch (error) {
+        const {ok} = await resp.json();
+          return ok;
+        } catch (error) {
 
-    throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
-    }
+        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+        }
+    };
+
+
+
+     const PostpostReservationPse = async ({propertyID,
+              token,
+              startDate,
+              endDate,
+              guestFirstName,
+              guestLastName,
+              guestEmail,
+              guestPhone,
+              rooms,
+              adults,
+              children,
+              dateCreated,  
+              bank,
+              subtotal,
+              promoCode}) => {
+          try {
+              const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/Epaycopse`, {
+              method: "POST",
+              headers: {
+              'Content-type': 'application/json'
+              },
+              body: JSON.stringify({propertyID,
+              token,
+              startDate,
+              endDate,
+              guestFirstName,
+              guestLastName,
+              guestEmail,
+              guestPhone,
+              rooms,
+              adults,
+              children,
+              dateCreated,
+              bank,
+              subtotal,
+              promoCode})
+        });
+        if (!resp.ok) {
+          throw new Error('Response is not ok');
+        }
+
+        const {url} = await resp.json();
+          return url;
+        } catch (error) {
+
+        throw error; // Puedes lanzar el error nuevamente o manejarlo de otra manera según tus necesidades
+        }
     };
 
   const GetCountry = async () => {
@@ -291,6 +342,28 @@ try {
   }
 };
 
+ const GetBanskPse = async () => {
+  try {
+    const resp = await fetch(`${config.serverRoute}/api/hotels/cloubeds/BankPse`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      }
+    });
+    if (!resp.ok) {
+      const response = await resp.json();
+      return {
+        ok:false,
+        msg: response.msg || 'Error al registrar cliente.',
+      }
+    }
+    const data = await resp.json();
+    return data.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
   export default {
     PostHotelByIdHotel,
     PostCreateReservation,
@@ -303,7 +376,9 @@ try {
     GetRoomsPromtions,
     getAvailableRoomTypes,
     PostpostReservation,
-    sendPromotionalEmail
+    sendPromotionalEmail,
+    GetBanskPse,
+    PostpostReservationPse
   }
 
 

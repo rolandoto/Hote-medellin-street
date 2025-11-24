@@ -12,6 +12,9 @@ module.exports = {
         '100px': '100px',
       },
       fontFamily: {
+         fontFamily: {
+        'plus-jakarta': ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui'],
+      },
         sans: ['Inter', 'Helvetica', 'Arial', 'Lucida', 'sans-serif'],
       },
     },
