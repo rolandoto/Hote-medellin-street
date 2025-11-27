@@ -101,8 +101,7 @@ const useReservationCreate =() =>{
            
             if(response){
                 dispatch(setCreateReservation(response)) 
-                const popup = window.open("", "_blank");
-                popup.location.href = response          
+                window.location.href = response          
                 RemoveCartAll()
                 toast.success(`Exitoso`)
             }else{
