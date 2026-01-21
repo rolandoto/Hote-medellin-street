@@ -44,7 +44,7 @@ const FooterHome =({PostHotelByIdHotel}) =>{
       </div>
       <div className="flex items-center mt-4">
         <span><FaPhoneAlt color="white" /></span>
-        <p className="ml-2">+57  301 870 64 34</p>
+        <p className="ml-2">+57 3024821498</p>
       </div>
       <div className="flex items-center mt-2">
         <span>✉️</span>
